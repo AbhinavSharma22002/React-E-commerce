@@ -3,18 +3,17 @@ connectToMongo();
 
 const express = require("express");
 const app = express();
-const port = 3000;
-
-app.use(express.json);
+const port = 5000;
+app.use(express.json());
 
 //availabel routes
 app.get("/", (req, res) => {
   res.send("Hello World!");
 });
 
-app.use("/api/auth", require("./routes/auth.js"));
-app.use("/api/notes", require("./routes/notes.js"));
+app.use("/auth/createUser", require("./routes/auth.js"));
+// app.use("/api/notes", require("./routes/notes.js"));
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`);
+  console.log(`Listening at http://localhost:${port}`);
 });

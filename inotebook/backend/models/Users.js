@@ -1,9 +1,8 @@
 const mongoose = require('mongoose');
-
-const UserSchema = new mongoose.Schema({
+const {Schema} = mongoose;
+const UserSchema = new Schema({
     name:{
         type: String,
-        unique: true,
         required: true
     },
     password:{
@@ -21,5 +20,6 @@ const UserSchema = new mongoose.Schema({
         required: true
     }    
 });
-
-module.exports = mongoose.model('user',UserSchema);
+const User = mongoose.model('user',UserSchema);
+User.createIndexes();
+module.exports = User;
