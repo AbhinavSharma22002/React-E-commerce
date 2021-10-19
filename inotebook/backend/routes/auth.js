@@ -19,16 +19,25 @@ router.post(
     }
 
     //Check whether email exist already
-    let user =  User.findOne({email: req.body.email});
-    console.log(user);
-    if(user){
-        return res.status(400).json({error:'Sorry a user with the same email exist already'})
-    }
-    user =  User.create({
-      name: req.body.name,
-      password: req.body.password,
-      email: req.body.email,
-    })
+    let user  = User.findOne({email: {$gte:req.body.email} }, function (err, docs) {
+      if (err){
+          console.log(err)
+      }
+      else{
+        if(docs!=null){
+          return res.status(400).json({error:'Sorry a user with the same email exist already'});
+        }
+        else{
+          user =  User.create({
+            name: req.body.name,
+            password: req.body.password,
+            email: req.body.email,
+          });
+          return res.status(200).json({sucess:'success'});
+        }
+      }
+  });
+    
     //   .then((user) => res.json(user))
     //   .catch((err) => {
     //     console.log(err);
