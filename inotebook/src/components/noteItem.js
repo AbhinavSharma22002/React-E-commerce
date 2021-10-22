@@ -3,8 +3,6 @@ const noteItem = (props) => {
     return (
         <>
             <div className="card my-4">
-              
-              
   <div className="card-body">
     <div className="d-flex align-items-center">
     <h5 className="card-title">{props.notes.name}</h5>
