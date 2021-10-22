@@ -6,7 +6,7 @@ const Home = (props) => {
   const [note, setnote] = useState([]);
   const [title, settitle] = useState("");
   const [desc, setdesc] = useState("");
-  const {FetchNotes, AddNotes, deleteNote} = context;
+  const {FetchNotes, AddNotes,updateNote, deleteNote} = context;
   
   useEffect(() => {
     FetchNotes(setnote);
@@ -70,7 +70,7 @@ const Home = (props) => {
       </div>
 
       <div className="container">
-        <Notes note={note} deleteNote={deleteNote} setnote={setnote}/>
+        <Notes note={note} deleteNote={deleteNote} updateNote={updateNote} setnote={setnote}/>
       </div>
     </div>
   );

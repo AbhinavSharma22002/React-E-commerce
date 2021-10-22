@@ -42,7 +42,7 @@ const NoteState = (props) => {
     }
   };
 
-  const updateNote = async (a) => {
+  const updateNote = async (title,desc,a,b) => {
     const requestOptions = {
       method: "PUT",
       headers: {
@@ -51,13 +51,13 @@ const NoteState = (props) => {
           "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE2ZWEwODE1YTlmYmZkYzlhNWNiODM2In0sImlhdCI6MTYzNDkyOTU2Mn0.rEw0tMJh4xn8NDaRkNnDvNkb3fxg2ww60Sdmmxx9HPk",
       },
       body: JSON.stringify({
-        title: "abhinav",
-        description: "abhinava sharma",
+        title: title,
+        description: desc,
         tag: "a123",
       }),
     };
     const response = await fetch(
-      "http://localhost:5000/api/notes/updatenotes/61730bcbeaccabe3065966bb",
+      "http://localhost:5000/api/notes/updatenotes/".concat(b),
       requestOptions
     );
     const data = await response.json();

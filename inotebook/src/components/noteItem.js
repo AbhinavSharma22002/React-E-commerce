@@ -17,7 +17,7 @@ const noteItem = (props) => {
               className="fas fa-edit"
               style={{cursor: 'pointer'}}
               onClick={() => {
-                console.log("Edit");
+                props.Up("","",props.setnote,props.id);
               }}
             ></i>
           </div>
