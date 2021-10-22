@@ -1,5 +1,5 @@
 import React from "react";
-
+import Notes from "./notes";
 const home = () => {
   return (
     <div>
@@ -7,7 +7,7 @@ const home = () => {
         <h1>Add a Note</h1>
         <form className="my-3 mx-3">
           <div className="mb-3">
-            <label for="exampleInputEmail1" className="form-label">
+            <label htmlFor="exampleInputEmail1" className="form-label">
               Email address
             </label>
             <input
@@ -21,7 +21,7 @@ const home = () => {
             </div>
           </div>
           <div className="mb-3">
-            <label for="exampleInputPassword1" className="form-label">
+            <label htmlFor="exampleInputPassword1" className="form-label">
               Password
             </label>
             <input
@@ -36,7 +36,7 @@ const home = () => {
               className="form-check-input"
               id="exampleCheck1"
             />
-            <label className="form-check-label" for="exampleCheck1">
+            <label className="form-check-label" htmlFor="exampleCheck1">
               Check me out
             </label>
           </div>
@@ -47,7 +47,7 @@ const home = () => {
       </div>
 
       <div className="container">
-      <h1>Your notes</h1>
+      <Notes/>
       </div>
     </div>
   );
