@@ -1,6 +1,33 @@
-import React from "react";
+import React, { useContext , useEffect, useState} from "react";
 import Notes from "./notes";
-const home = () => {
+import NoteContext from "../context/notes/noteContext";
+const Home = (props) => {
+  const context = useContext(NoteContext);
+  const [note, setnote] = useState([]);
+  const [title, settitle] = useState("");
+  const [desc, setdesc] = useState("");
+  const {FetchNotes, AddNotes, deleteNote} = context;
+  
+  useEffect(() => {
+    FetchNotes(setnote);
+    // eslint-disable-next-line
+  }, [note]);
+
+  const handleSubmit = (e)=>{
+    AddNotes(title,desc,setnote);
+    settitle("");
+    setdesc("");
+    e.preventDefault();
+  };
+
+  const handleChange1 = (e)=>{
+    settitle(e.target.value);
+  }
+  const handleChange2 = (e)=>{
+    setdesc(e.target.value);
+  }
+  
+
   return (
     <div>
       <div className="container my-3">
@@ -8,49 +35,45 @@ const home = () => {
         <form className="my-3 mx-3">
           <div className="mb-3">
             <label htmlFor="exampleInputEmail1" className="form-label">
-              Email address
+              Title
             </label>
             <input
-              type="email"
+              type="text"
+              name="title"
+              value={title}
+              onChange={handleChange1}
               className="form-control"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
             />
-            <div id="emailHelp" className="form-text">
+            {/* <div id="emailHelp" className="form-text">
               We'll never share your email with anyone else.
-            </div>
+            </div> */}
           </div>
           <div className="mb-3">
             <label htmlFor="exampleInputPassword1" className="form-label">
-              Password
+              Description
             </label>
             <input
-              type="password"
+              type="text"
+              name="desc"
+              value={desc}
+              onChange={handleChange2}
               className="form-control"
               id="exampleInputPassword1"
             />
           </div>
-          <div className="mb-3 form-check">
-            <input
-              type="checkbox"
-              className="form-check-input"
-              id="exampleCheck1"
-            />
-            <label className="form-check-label" htmlFor="exampleCheck1">
-              Check me out
-            </label>
-          </div>
-          <button type="submit" className="btn btn-primary">
-            Submit
+          <button type="submit" className="btn btn-primary" onClick={handleSubmit}>
+            Submit 
           </button>
         </form>
       </div>
 
       <div className="container">
-        <Notes />
+        <Notes note={note} deleteNote={deleteNote} setnote={setnote}/>
       </div>
     </div>
   );
 };
 
-export default home;
+export default Home;

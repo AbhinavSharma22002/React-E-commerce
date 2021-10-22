@@ -5,21 +5,23 @@ const noteItem = (props) => {
       <div className="card my-4">
         <div className="card-body">
           <div className="d-flex align-items-center">
-            <h5 className="card-title">{props.notes.name}</h5>
+            <h5 className="card-title">{props.notes.title}</h5>
             <i
               className="fas fa-trash mx-3"
+              style={{cursor: 'pointer'}}
               onClick={() => {
-                console.log("delete");
+                props.Del(props.setnote,props.id);
               }}
             ></i>
             <i
               className="fas fa-edit"
+              style={{cursor: 'pointer'}}
               onClick={() => {
                 console.log("Edit");
               }}
             ></i>
           </div>
-          <p className="card-text">{props.notes.class}</p>
+          <p className="card-text">{props.notes.description}</p>
         </div>
       </div>
     </>

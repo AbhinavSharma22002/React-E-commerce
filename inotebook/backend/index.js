@@ -4,6 +4,8 @@ connectToMongo();
 const express = require("express");
 const app = express();
 const port = 5000;
+const Cors = require("cors");
+app.use(Cors());
 app.use(express.json());
 
 //availabel routes
