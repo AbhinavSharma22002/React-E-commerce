@@ -47,7 +47,7 @@ const home = () => {
       </div>
 
       <div className="container">
-      <Notes/>
+        <Notes />
       </div>
     </div>
   );
