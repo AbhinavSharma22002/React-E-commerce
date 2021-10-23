@@ -1,26 +1,40 @@
-import React, { useContext , useEffect, useState} from "react";
+import React, { useContext, useState,useEffect} from "react";
 import Notes from "./notes";
+import { useHistory } from "react-router";
 import NoteContext from "../context/notes/noteContext";
 const Home = (props) => {
   const context = useContext(NoteContext);
-  const [note, setnote] = useState([]);
   const [title, settitle] = useState("");
   const [desc, setdesc] = useState("");
   const [tag, settag] = useState("");
   const {FetchNotes, AddNotes,updateNote, deleteNote} = context;
   const {showAlert} = props;
+  const [note, setnote] = useState([]);
 
-
+  let history = useHistory();
   useEffect(() => {
-    FetchNotes(setnote);
-    // eslint-disable-next-line
-  }, [note]);
+    if(localStorage.getItem('token')){
+      FetchNotes(setnote,localStorage.getItem('token'));
+    }
+    else{
+      props.showAlert("Please Log In!!","danger")
+      history.push('/login');
+    }
+    //eslint-disable-next-line
+  }, []);
+
 
   const handleSubmit = (e)=>{
-    AddNotes(title,desc,tag,setnote,props.showAlert);
-    settitle("");
-    setdesc("");
-    settag("");
+    if(note!==null){
+      AddNotes(title,desc,tag,setnote,props.showAlert,localStorage.getItem('token'));
+      settitle("");
+      setdesc("");
+      settag("");
+    }
+    else{
+      props.showAlert("Please Log In!!","danger")
+      history.push('/login');
+    }
     e.preventDefault();
   };
 
@@ -87,7 +101,7 @@ const Home = (props) => {
       </div>
 
       <div className="container">
-        <Notes note={note} showAlert={showAlert} deleteNote={deleteNote} updateNote={updateNote} setnote={setnote} FetchNotes={FetchNotes}/>
+        <Notes note={note} setnote={setnote} showAlert={showAlert} deleteNote={deleteNote} updateNote={updateNote} FetchNotes={FetchNotes}/>
       </div>
     </div>
   );

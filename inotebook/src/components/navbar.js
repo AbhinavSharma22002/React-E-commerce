@@ -10,6 +10,8 @@ const Navbar = () => {
   }
 
   useEffect(() => {}, [location]);
+
+  
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <div className="container-fluid">
@@ -41,11 +43,15 @@ const Navbar = () => {
               </Link>
             </li>
 
-            {localStorage.getItem('token')?<li className="nav-item">
+            {localStorage.getItem('token')?
+            <>
+            <li className="nav-item">
               <a onClick={handleLogout} className="nav-link">
                 Logout
-              </a>
-            </li>:
+                </a>
+            </li>
+            </>
+            :
             <>
             <li className="nav-item">
               <Link

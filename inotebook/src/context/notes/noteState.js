@@ -13,18 +13,16 @@ const NoteState = (props) => {
       requestOptions
     );
     const data = await response.json();
-   console.log(data);
    a(data);
   };
 
-  const AddNotes = async(title,desc,tag,a,b) => {
+  const AddNotes = async(title,desc,tag,a,b,c) => {
     const requestOptions = {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE2ZWEwODE1YTlmYmZkYzlhNWNiODM2In0sImlhdCI6MTYzNDkyOTU2Mn0.rEw0tMJh4xn8NDaRkNnDvNkb3fxg2ww60Sdmmxx9HPk",
-      },
+        "auth-token":c
+          },
       body: JSON.stringify({
         title: title,
         description: desc,
@@ -35,11 +33,13 @@ const NoteState = (props) => {
       "http://localhost:5000/api/notes/addNote",
       requestOptions
     );
-    // const data = await response.json();
+    const data = await response.json();
     if(response.status===200){
+      a(data);
       b("Added","success");
     }
     else{
+      console.log(data);
       b("Error","danger");
     }
   };
@@ -49,8 +49,7 @@ const NoteState = (props) => {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE2ZWEwODE1YTlmYmZkYzlhNWNiODM2In0sImlhdCI6MTYzNDkyOTU2Mn0.rEw0tMJh4xn8NDaRkNnDvNkb3fxg2ww60Sdmmxx9HPk",
+        "auth-token":"hdh"
       },
       body: JSON.stringify({
         title: title,
@@ -73,13 +72,12 @@ const NoteState = (props) => {
     }
   };
 
-  const deleteNote = async(a,b,c) => {
+  const deleteNote = async(a,b,c,d) => {
     const requestOptions = {
       method: "DELETE",
       headers: {
         "Content-Type": "application/json",
-        "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE2ZWEwODE1YTlmYmZkYzlhNWNiODM2In0sImlhdCI6MTYzNDkyOTU2Mn0.rEw0tMJh4xn8NDaRkNnDvNkb3fxg2ww60Sdmmxx9HPk",
+        "auth-token":d
       },
     };
     const response = await fetch(

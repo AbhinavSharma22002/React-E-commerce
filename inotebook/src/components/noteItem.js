@@ -1,5 +1,6 @@
 import React from "react";
 import { useRef, useState } from "react";
+import { useHistory } from "react-router";
 const NoteItem = (props) => {
   const ref = useRef(null);
   // const refclose = useRef(null);
@@ -7,6 +8,7 @@ const NoteItem = (props) => {
   const [desc, setdesc] = useState("");
   const [tag, settag] = useState("");
 
+  let history = useHistory();
  
 
   const handleClick = (e) => {
@@ -128,7 +130,17 @@ const NoteItem = (props) => {
               className="fas fa-trash mx-3"
               style={{ cursor: "pointer" }}
               onClick={() => {
-                props.Del(props.setnote, props.id,props.showAlert);
+                if(localStorage.getItem('token')){
+                  props.Del(props.setnote, props.id,props.showAlert,localStorage.getItem('token'));
+                  let arr = props.y.filter(function(item) {
+                    return item._id !== props.id
+                })
+                  props.setnote(arr); 
+                }
+                else{
+                  props.showAlert("Please Log In!!","danger");
+                  history.push('/login');
+                }
               }}
             ></i>
             <i
