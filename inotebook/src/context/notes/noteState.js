@@ -13,7 +13,8 @@ const NoteState = (props) => {
       requestOptions
     );
     const data = await response.json();
-    a(data);
+   console.log(data);
+   a(data);
   };
 
   const AddNotes = async(title,desc,tag,a,b) => {

@@ -87,7 +87,7 @@ const Home = (props) => {
       </div>
 
       <div className="container">
-        <Notes note={note} showAlert={showAlert} deleteNote={deleteNote} updateNote={updateNote} setnote={setnote} getnotes={FetchNotes}/>
+        <Notes note={note} showAlert={showAlert} deleteNote={deleteNote} updateNote={updateNote} setnote={setnote} FetchNotes={FetchNotes}/>
       </div>
     </div>
   );

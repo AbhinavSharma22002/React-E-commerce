@@ -13,19 +13,20 @@ const Notes = (props) => {
   useEffect(() => {
     if(localStorage.getItem('token')){
       console.log(localStorage.getItem('token'))
-      props.getnotes(sethi,localStorage.getItem('token'));
+      props.FetchNotes(sethi,localStorage.getItem('token'));
     }
     else{
       props.showAlert("Please Log In!!","danger")
       history.push('/login');
     }
-  }, [])
+  }, []);
+  
   return (
     <>     
       <h2>Your Notes</h2>
       {hi.length===0 && 'No notes to display'}
       <div className="container row my-3">
-        {props.note.map((notes) => {
+        {hi.map((notes) => {
           return (
             <NoteItem
               key={notes._id}
