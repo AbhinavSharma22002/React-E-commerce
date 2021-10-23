@@ -53,16 +53,16 @@ const NoteState = (props) => {
       body: JSON.stringify({
         title: title,
         description: desc,
-        tag: "a123",
+        tag: a,
       }),
     };
     const response = await fetch(
       "http://localhost:5000/api/notes/updatenotes/".concat(b),
       requestOptions
     );
+    // eslint-disable-next-line
     const data = await response.json();
     // setPostId(data.id);
-    a(data);
   };
 
   const deleteNote = async(a,b,c) => {

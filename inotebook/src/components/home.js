@@ -9,6 +9,8 @@ const Home = (props) => {
   const [tag, settag] = useState("");
   const {FetchNotes, AddNotes,updateNote, deleteNote} = context;
   
+  
+
   useEffect(() => {
     FetchNotes(setnote);
     // eslint-disable-next-line
