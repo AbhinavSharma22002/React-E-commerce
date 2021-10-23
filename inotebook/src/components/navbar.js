@@ -1,8 +1,13 @@
 import React, { useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useHistory} from "react-router-dom";
 
 const Navbar = () => {
   let location = useLocation();
+  let history = useHistory();
+  const handleLogout = ()=>{
+    localStorage.removeItem('token');
+    history.push('/login');
+  }
 
   useEffect(() => {}, [location]);
   return (
@@ -35,6 +40,13 @@ const Navbar = () => {
                 Home
               </Link>
             </li>
+
+            {localStorage.getItem('token')?<li className="nav-item">
+              <a onClick={handleLogout} className="nav-link">
+                Logout
+              </a>
+            </li>:
+            <>
             <li className="nav-item">
               <Link
                 className={`nav-link ${
@@ -56,7 +68,8 @@ const Navbar = () => {
                 SignUp
               </Link>
             </li>
-  
+            </>
+            }
 
 
             <li className="nav-item">

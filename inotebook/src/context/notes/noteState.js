@@ -1,12 +1,11 @@
 import noteContext from "./noteContext";
 
 const NoteState = (props) => {
-  const FetchNotes = async (a) => {
+  const FetchNotes = async (a,b) => {
     const requestOptions = {
       method: "GET",
       headers: {
-        "auth-token":
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNjE2ZWEwODE1YTlmYmZkYzlhNWNiODM2In0sImlhdCI6MTYzNDkyOTU2Mn0.rEw0tMJh4xn8NDaRkNnDvNkb3fxg2ww60Sdmmxx9HPk",
+        "auth-token":b
       },
     };
     const response = await fetch(
@@ -35,7 +34,7 @@ const NoteState = (props) => {
       "http://localhost:5000/api/notes/addNote",
       requestOptions
     );
-    const data = await response.json();
+    // const data = await response.json();
     if(response.status===200){
       b("Added","success");
     }
@@ -63,8 +62,14 @@ const NoteState = (props) => {
       requestOptions
     );
     // eslint-disable-next-line
-    const data = await response.json();
+    // const data = await response.json();
     // setPostId(data.id);
+    if(response.status===200){
+      console.log(response.json);
+    }
+    else{
+      console.log(response.status);
+    }
   };
 
   const deleteNote = async(a,b,c) => {
