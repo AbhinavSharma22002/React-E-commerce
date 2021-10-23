@@ -1,5 +1,5 @@
 import React from "react";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 const NoteItem = (props) => {
   const ref = useRef(null);
   // const refclose = useRef(null);
@@ -128,7 +128,7 @@ const NoteItem = (props) => {
               className="fas fa-trash mx-3"
               style={{ cursor: "pointer" }}
               onClick={() => {
-                props.Del(props.setnote, props.id);
+                props.Del(props.setnote, props.id,props.showAlert);
               }}
             ></i>
             <i

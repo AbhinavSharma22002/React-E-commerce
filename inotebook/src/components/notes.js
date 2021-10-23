@@ -3,11 +3,12 @@ const Notes = (props) => {
   const handleres = async (a,b,c,t) => {
     console.log(a,b,c,t);
     //  await updateNote(a,b,c,t);
-    alert("Updated");
+    props.showAlert("Updated","success");
   };
   return (
     <>     
       <h2>Your Notes</h2>
+      {props.note.length===0 && 'No notes to display'}
       <div className="container row my-3">
         {props.note.map((notes) => {
           return (
@@ -17,6 +18,7 @@ const Notes = (props) => {
               Del={props.deleteNote}
               Up={props.updateNote}
               id={notes._id}
+              showAlert={props.showAlert}
               handleres={handleres}
               setnote={props.setnote}
             />

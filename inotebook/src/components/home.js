@@ -8,8 +8,8 @@ const Home = (props) => {
   const [desc, setdesc] = useState("");
   const [tag, settag] = useState("");
   const {FetchNotes, AddNotes,updateNote, deleteNote} = context;
-  
-  
+  const {showAlert} = props;
+
 
   useEffect(() => {
     FetchNotes(setnote);
@@ -17,7 +17,7 @@ const Home = (props) => {
   }, [note]);
 
   const handleSubmit = (e)=>{
-    AddNotes(title,desc,tag,setnote);
+    AddNotes(title,desc,tag,setnote,props.showAlert);
     settitle("");
     setdesc("");
     settag("");
@@ -80,14 +80,14 @@ const Home = (props) => {
               id="tag"
             />
           </div>
-          <button type="submit" className="btn btn-primary" onClick={handleSubmit}>
-            Submit 
+          <button disabled={title.length<5 || desc.length<5} type="submit" className="btn btn-primary" onClick={handleSubmit}>
+            Add Note
           </button>
         </form>
       </div>
 
       <div className="container">
-        <Notes note={note} deleteNote={deleteNote} updateNote={updateNote} setnote={setnote}/>
+        <Notes note={note} showAlert={showAlert} deleteNote={deleteNote} updateNote={updateNote} setnote={setnote}/>
       </div>
     </div>
   );

@@ -17,7 +17,7 @@ const NoteState = (props) => {
     a(data);
   };
 
-  const AddNotes = async(title,desc,tag,a) => {
+  const AddNotes = async(title,desc,tag,a,b) => {
     const requestOptions = {
       method: "POST",
       headers: {
@@ -36,9 +36,11 @@ const NoteState = (props) => {
       requestOptions
     );
     const data = await response.json();
-    try{
-      alert(data.errors[0].msg);
-    }catch(errror){
+    if(response.status===200){
+      b("Added","success");
+    }
+    else{
+      b("Error","danger");
     }
   };
 
@@ -80,6 +82,11 @@ const NoteState = (props) => {
     );
     // eslint-disable-next-line
     const data = await response.json();
+    if(response.status===200){
+      c("Deleted","success");
+    }else{
+      c("Error","danger");
+    }
   };
 
   return (
