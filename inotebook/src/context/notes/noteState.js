@@ -17,7 +17,7 @@ const NoteState = (props) => {
     a(data);
   };
 
-  const AddNotes = async(title,desc,a) => {
+  const AddNotes = async(title,desc,tag,a) => {
     const requestOptions = {
       method: "POST",
       headers: {
@@ -28,7 +28,7 @@ const NoteState = (props) => {
       body: JSON.stringify({
         title: title,
         description: desc,
-        tag: "morning",
+        tag: tag
       }),
     };
     const response = await fetch(
@@ -65,7 +65,7 @@ const NoteState = (props) => {
     a(data);
   };
 
-  const deleteNote = async(a,b) => {
+  const deleteNote = async(a,b,c) => {
     const requestOptions = {
       method: "DELETE",
       headers: {

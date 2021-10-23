@@ -6,6 +6,7 @@ const Home = (props) => {
   const [note, setnote] = useState([]);
   const [title, settitle] = useState("");
   const [desc, setdesc] = useState("");
+  const [tag, settag] = useState("");
   const {FetchNotes, AddNotes,updateNote, deleteNote} = context;
   
   useEffect(() => {
@@ -14,9 +15,10 @@ const Home = (props) => {
   }, [note]);
 
   const handleSubmit = (e)=>{
-    AddNotes(title,desc,setnote);
+    AddNotes(title,desc,tag,setnote);
     settitle("");
     setdesc("");
+    settag("");
     e.preventDefault();
   };
 
@@ -27,6 +29,9 @@ const Home = (props) => {
     setdesc(e.target.value);
   }
   
+  const handleChange3 = (e)=>{
+    settag(e.target.value);
+  }
 
   return (
     <div>
@@ -46,9 +51,6 @@ const Home = (props) => {
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
             />
-            {/* <div id="emailHelp" className="form-text">
-              We'll never share your email with anyone else.
-            </div> */}
           </div>
           <div className="mb-3">
             <label htmlFor="exampleInputPassword1" className="form-label">
@@ -61,6 +63,19 @@ const Home = (props) => {
               onChange={handleChange2}
               className="form-control"
               id="exampleInputPassword1"
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="tag" className="form-label">
+              Tag
+            </label>
+            <input
+              type="text"
+              name="tag"
+              value={tag}
+              onChange={handleChange3}
+              className="form-control"
+              id="tag"
             />
           </div>
           <button type="submit" className="btn btn-primary" onClick={handleSubmit}>
