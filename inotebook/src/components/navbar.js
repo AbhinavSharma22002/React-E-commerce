@@ -46,7 +46,7 @@ const Navbar = () => {
             {localStorage.getItem('token')?
             <>
             <li className="nav-item">
-              <a onClick={handleLogout} className="nav-link">
+              <a onClick={handleLogout} style={{cursor:'pointer'}} className="nav-link">
                 Logout
                 </a>
             </li>
