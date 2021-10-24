@@ -1,0 +1,122 @@
+[
+{
+    "id": "1", "image": "img1.jfif", "name": "Shoes 1", "category": "shoes", "price":25
+},
+{
+    "id": "2", "image": "img2.jfif", "name": "Shoes 2", "category": "shoes", "price":25
+},
+{
+    "id": "3", "image": "img3.jfif", "name": "Shoes 3", "category": "shoes", "price":25
+},
+{
+    "id": "4", "image": "img4.jfif", "name": "Shoes 4", "category": "shoes", "price":25
+},
+{
+    "id": "5", "image": "img5.jfif", "name": "Shoes 5", "category": "shoes", "price":25
+},
+{
+    "id": "6", "image": "img6.jfif", "name": "Shoes 6", "category": "shoes", "price":25
+},
+{
+    "id": "7", "image": "img7.jfif", "name": "Shoes 7", "category": "shoes", "price":25
+},
+{
+    "id": "8", "image": "img8.jfif", "name": "Shoes 8", "category": "shoes", "price":25
+},
+{
+    "id": "9", "image": "img9.jfif", "name": "Shoes 9", "category": "shoes", "price":25
+},
+{
+    "id": "10", "image": "img10.jfif", "name": "Shoes 10", "category": "shoes", "price":25
+},
+{
+    "id": "11", "image": "img11.jfif", "name": "Shirt 1", "category": "shirt", "price":25
+},
+{
+    "id": "12", "image": "img12.jfif", "name": "Shirt 2", "category": "shirt", "price":25
+},
+{
+    "id": "13", "image": "img13.jfif", "name": "Shirt 3", "category": "shirt", "price":25
+},
+{
+    "id": "14", "image": "img14.jfif", "name": "Shirt 4", "category": "shirt", "price":25
+},
+{
+    "id": "15", "image": "img15.jfif", "name": "Shirt 5", "category": "shirt", "price":25
+},
+{
+    "id": "16", "image": "img16.jfif", "name": "Shirt 6", "category": "shirt", "price":25
+},
+{
+    "id": "17", "image": "img17.jfif", "name": "Shirt 7", "category": "shirt", "price":25
+},
+{
+    "id": "18", "image": "img18.jfif", "name": "Shirt 8", "category": "shirt", "price":25
+},
+{
+    "id": "19", "image": "img19.jfif", "name": "Shirt 9", "category": "shirt", "price":25
+},
+{
+    "id": "20", "image": "img20.jfif", "name": "Shirt 10", "category": "shirt", "price":25
+},
+{
+    "id": "21", "image": "img21.jfif", "name": "Jeans 1", "category": "jeans", "price":25
+},
+{
+    "id": "22", "image": "img22.jfif", "name": "Jeans 2", "category": "jeans", "price":25
+},
+{
+    "id": "23", "image": "img23.jfif", "name": "Jeans 3", "category": "jeans", "price":25
+},
+{
+    "id": "24", "image": "img24.jfif", "name": "Jeans 4", "category": "jeans", "price":25
+},
+{
+    "id": "25", "image": "img25.jfif", "name": "Jeans 5", "category": "jeans", "price":25
+},
+{
+    "id": "26", "image": "img26.jfif", "name": "Jeans 6", "category": "jeans", "price":25
+},
+{
+    "id": "27", "image": "img27.jfif", "name": "Jeans 7", "category": "jeans", "price":25
+},
+{
+    "id": "28", "image": "img28.jfif", "name": "Jeans 8", "category": "jeans", "price":25
+},
+{
+    "id": "29", "image": "img29.jfif", "name": "Jeans 9", "category": "jeans", "price":25
+},
+{
+    "id": "30", "image": "img30.jfif", "name": "Jeans 10", "category": "jeans", "price":25
+},
+{
+    "id": "31", "image": "img31.jfif", "name": "Watch 1", "category": "watch", "price":25
+},
+{
+    "id": "32", "image": "img32.jfif", "name": "Watch 2", "category": "watch", "price":25
+},
+{
+    "id": "33", "image": "img33.jfif", "name": "Watch 3", "category": "watch", "price":25
+},
+{
+    "id": "34", "image": "img34.jfif", "name": "Watch 4", "category": "watch", "price":25
+},
+{
+    "id": "35", "image": "img35.jfif", "name": "Watch 5", "category": "watch", "price":25
+},
+{
+    "id": "36", "image": "img36.jfif", "name": "Watch 6", "category": "watch", "price":25
+},
+{
+    "id": "37", "image": "img37.jfif", "name": "Watch 7", "category": "watch", "price":25
+},
+{
+    "id": "38", "image": "img38.jfif", "name": "Watch 8", "category": "watch", "price":25
+},
+{
+    "id": "39", "image": "img39.jfif", "name": "Watch 9", "category": "watch", "price":25 
+},
+{
+    "id": "40", "image": "img40.jfif", "name": "Watch 10", "category": "watch", "price":25
+}
+]

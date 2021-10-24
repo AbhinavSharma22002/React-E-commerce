@@ -2,6 +2,7 @@ const express = require("express");
 const fetchuser = require("../middleware/Fetchuser");
 const router = express.Router();
 const Notes = require("../models/Notes");
+const Data = require("../models/Data");
 const { body, validationResult } = require("express-validator");
 
 //Route 1:  Get all the notes login require
@@ -97,6 +98,19 @@ router.delete('/deleteNote/:id',fetchuser, async (req,res)=>{
      }
      note = await Notes.findByIdAndDelete(req.params.id);
      res.json({"success":"note has been deleted"});
+});
+
+//Route 5: Data
+
+router.get('/Data',async(req,res)=>{
+  try{
+    const notes = await Data.find();
+    res.json(notes);
+}
+catch(error){
+    console.log(error.message);
+    res.status(500).send('INTERNAL SERVER ERROR 1');
+}
 });
 
 module.exports = router;
