@@ -44,31 +44,31 @@ const NoteState = (props) => {
     }
   };
 
-  const updateNote = async (title,desc,a,b) => {
+  const updateNote = async (title,desc,tag,a,b,c) => {
     const requestOptions = {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
-        "auth-token":"hdh"
+        "auth-token":a
       },
       body: JSON.stringify({
         title: title,
         description: desc,
-        tag: a,
+        tag: tag
       }),
     };
     const response = await fetch(
-      "http://localhost:5000/api/notes/updatenotes/".concat(b),
+      "http://localhost:5000/api/notes/updatenotes/".concat(c),
       requestOptions
     );
     // eslint-disable-next-line
-    // const data = await response.json();
-    // setPostId(data.id);
+    const data = await response.json();
     if(response.status===200){
-      console.log(response.json);
+      
+      b("Updated","success"); 
     }
     else{
-      console.log(response.status);
+      b("Error","danger");
     }
   };
 
