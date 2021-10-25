@@ -43,6 +43,32 @@ const NoteState = (props) => {
       b("Error","danger");
     }
   };
+  const AddNotes1 = async(title,desc,tag,b,c) => {
+    const requestOptions = {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token":c
+          },
+      body: JSON.stringify({
+        title: title,
+        description: desc,
+        tag: tag
+      }),
+    };
+    const response = await fetch(
+      "http://localhost:5000/api/notes/addNote",
+      requestOptions
+    );
+    const data = await response.json();
+    if(response.status===200){
+      b("Added","success");
+    }
+    else{
+      console.log(data);
+      b("Error","danger");
+    }
+  };
 
   const updateNote = async (title,desc,tag,a,b,c) => {
     const requestOptions = {
@@ -94,7 +120,7 @@ const NoteState = (props) => {
   };
 
   return (
-    <noteContext.Provider value={{FetchNotes, AddNotes, updateNote, deleteNote}}>
+    <noteContext.Provider value={{FetchNotes, AddNotes, AddNotes1, updateNote, deleteNote}}>
       {props.children}
     </noteContext.Provider>
   );

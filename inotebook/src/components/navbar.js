@@ -15,7 +15,7 @@ const Navbar = () => {
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark" style={{minHeight:'80px', position:'sticky',top:'0',zIndex:'10'}}>
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          Navbar
+          Home
         </Link>
         <button
           className="navbar-toggler"

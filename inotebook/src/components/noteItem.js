@@ -25,13 +25,6 @@ const NoteItem = (props) => {
                 }
               }}
             ></i>
-            <i
-              className="fas fa-edit"
-              style={{ cursor: "pointer" }}
-              data-bs-toggle="modal"
-              data-bs-target="#exampleModal"
-              onClick={()=>{props.Up(props.notes)}}
-            ></i>
           </div>
           <p className="card-text">{props.notes.description}</p>
         </div>
