@@ -7,12 +7,19 @@ const NoteItem = (props) => {
       <div className="card my-4">
         <div className="card-body">
           <div className="d-flex align-items-center">
-            <h5 className="card-title">{props.notes.name}</h5>
+            <h5 className="card-title">{props.notes.category.toUpperCase()}</h5>
           </div>
           <hr/>
-          <p className="card-text">
+          <span className="card-text">
             <img src={`./images/${props.notes.image}`}></img>
-            </p>
+            <span style={{float:'right',fontSize:'40px'}}>
+              <p style={{color:'black'}}>Price:{props.notes.price}</p>
+            </span>
+            <span>
+              {props.notes.name}
+            </span>
+          </span>
+          <hr/>
             <i
               className="fas fa-trash"
               style={{ cursor: "pointer" }}

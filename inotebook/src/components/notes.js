@@ -6,7 +6,7 @@ const Notes = (props) => {
       <h1 className="text-center" style={{color:'white'}}>Your Items</h1>
       <hr/>
       <p style={{color:'white'}}>{props.note.length===0 && 'Cart is Empty!! Please Add!!'}</p>
-      <div className="container row">
+      <div className="container row" style={{overflowX:'hidden',overflowY:'visible',scrollbarWidth:'none'}}>
         {props.note.map((notes) => {
           return (
             <NoteItem
