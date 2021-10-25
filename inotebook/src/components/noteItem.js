@@ -7,9 +7,14 @@ const NoteItem = (props) => {
       <div className="card my-4">
         <div className="card-body">
           <div className="d-flex align-items-center">
-            <h5 className="card-title">{props.notes.title}</h5>
+            <h5 className="card-title">{props.notes.name}</h5>
+          </div>
+          <hr/>
+          <p className="card-text">
+            <img src={`./images/${props.notes.image}`}></img>
+            </p>
             <i
-              className="fas fa-trash mx-3"
+              className="fas fa-trash"
               style={{ cursor: "pointer" }}
               onClick={() => {
                 if(localStorage.getItem('token')){
@@ -24,10 +29,9 @@ const NoteItem = (props) => {
                   history.push('/login');
                 }
               }}
-            ></i>
-          </div>
-          <p className="card-text">{props.notes.description}</p>
+            > Remove</i>
         </div>
+
       </div>
     </>
   );

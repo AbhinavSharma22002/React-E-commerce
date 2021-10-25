@@ -1,5 +1,5 @@
 import './App.css';
-import {useState,useEffect, useContext} from 'react';
+import {useState,useEffect} from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -17,14 +17,12 @@ import Shirt from './components/Shirt';
 import Watch from './components/Watch';
 import Jeans from './components/Jeans';
 import Shoes from './components/Shoes';
-import NoteContext from "./context/notes/noteContext";
 
 
 function App() { 
-  const context = useContext(NoteContext);
   const [data, setdata] = useState(null);
   const [alert,setAlert] = useState(null);
-  const {AddNotes1,AddNotes} = context;
+  // const {AddNote} = context;
   const showAlert = (message,type)=>{
     setAlert([message,type])
     setTimeout(()=>{
@@ -73,16 +71,16 @@ function App() {
       </Route>
   
       <Route exact path="/shoes">
-      {data===null?"":<Shoes showAlert={showAlert} data={data} order={AddNotes1}/>}
+      {data===null?"":<Shoes showAlert={showAlert} data={data} />}
       </Route>      
       <Route exact path="/shirt">
-      {data===null?"":<Shirt showAlert={showAlert} data={data} order={AddNotes1}/>}
+      {data===null?"":<Shirt showAlert={showAlert} data={data} />}
       </Route>      
       <Route exact path="/watch">
-      {data===null?"":<Watch showAlert={showAlert} data={data} order={AddNotes1}/>}
+      {data===null?"":<Watch showAlert={showAlert} data={data} />}
       </Route>      
       <Route exact path="/jeans">
-      {data===null?"":<Jeans showAlert={showAlert} data={data} order={AddNotes1}/>}
+      {data===null?"":<Jeans showAlert={showAlert} data={data} />}
       </Route>
 
       <Route exact path="/About">

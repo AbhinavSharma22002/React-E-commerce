@@ -5,21 +5,21 @@ const NotesSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'user'
     },
-    title:{
+    image:{
         type: String,
         required: true
     },
-    description:{
+    name:{
         type: String,
         required: true
     },
-    tag:{
+    category:{
         type: String,
-        default: "General"
+        required: true
     },
-    date:{
-        type: Date,
-        default: Date.now
+    price:{
+        type: Number,
+        required: true
     } 
     
 });

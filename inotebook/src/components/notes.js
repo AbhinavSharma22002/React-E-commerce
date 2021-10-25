@@ -3,10 +3,10 @@ const Notes = (props) => {
   return (
     <>     
     <div className="container my-5 bg-dark">
-      <h1 className="text-center" style={{color:'white'}}>Your Cart</h1>
+      <h1 className="text-center" style={{color:'white'}}>Your Items</h1>
       <hr/>
-      {props.note.length===0 && 'No notes to display'}
-      <div className="container row bg-dark">
+      <p style={{color:'white'}}>{props.note.length===0 && 'Cart is Empty!! Please Add!!'}</p>
+      <div className="container row">
         {props.note.map((notes) => {
           return (
             <NoteItem

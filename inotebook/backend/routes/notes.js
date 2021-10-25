@@ -21,30 +21,31 @@ router.get("/fetchallNotes", fetchuser, async (req, res) => {
 router.post(
   "/addNote",
   fetchuser,
-  [
-    body("title", "Enter a valid title").isLength({ min: 3 }),
-    body("description", "Enter a valid description").isLength({ min: 7 }),
-  ],
+  // [
+  //   body("title", "Enter a valid title").isLength({ min: 3 }),
+  //   body("description", "Enter a valid description").isLength({ min: 7 }),
+  // ],
   async (req, res) => {
     //If there are errors, return bad request
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
-    }
+    // const errors = validationResult(req);
+    // if (!errors.isEmpty()) {
+    //   return res.status(400).json({ errors: errors.array() });
+    // }
 
     try {
-      const { title, description, tag } = req.body;
+      const { image,name,category, price} = req.body;
 
       const note = {
-        title,
-        description,
-        tag,
+        image,
+        name,
+        category,
+        price,
         user: req.user.id,
       };
       const savedNote = await Notes.create(note);
-
       const notes = await Notes.find({ user: req.user.id });
       res.json(notes);
+
     } catch (error) {
         console.log(error.message);
       res.status(500).send("INTERNAL SERVER ERROR");
