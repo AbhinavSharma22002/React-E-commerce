@@ -45,11 +45,8 @@ const Navbar = () => {
             {localStorage.getItem("token") ? (
               <>
                 <li className="nav-item">
-                  <a
-                    onClick={handleLogout}
-                    style={{ cursor: "pointer" }}
-                    className="nav-link"
-                  >
+                  {/* eslint-disable-next-line*/}
+                  <a onClick={handleLogout} style={{ cursor: "pointer" }} className="nav-link">
                     Logout
                   </a>
                 </li>

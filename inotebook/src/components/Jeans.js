@@ -21,9 +21,10 @@ const Jeans = (props) => {
         <div>
             {props.data.map((item)=>{
                 if(item.category==="jeans"){
-                    return <Card item={item} key={item.id} order={order}></Card>;
+                    return (<Card item={item} key={item.id} order={order}></Card>);
                 }
                 else{
+                    //eslint-disable-next-line
                     return;
                 }
             })}

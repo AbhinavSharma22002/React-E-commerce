@@ -11,7 +11,7 @@ const NoteItem = (props) => {
           </div>
           <hr/>
           <span className="card-text">
-            <img src={`./images/${props.notes.image}`}></img>
+            <img src={`./images/${props.notes.image}`} alt={props.notes.category}></img>
             <span style={{float:'right',fontSize:'40px'}}>
               <p style={{color:'black'}}>Price:{props.notes.price}</p>
             </span>

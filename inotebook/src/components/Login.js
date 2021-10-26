@@ -46,7 +46,7 @@ const Login = (props) => {
                 <div className="form-block mx-auto">
                   <div className="text-center mb-5">
                     <h3>
-                      Login to <strong>Colorlib</strong>
+                      Login to <strong>E-Commerce</strong>
                     </h3>
                   </div>
                   <form>

@@ -49,6 +49,7 @@ const Corel = (props) => {
               <Link to="/shoes">
             <img
               src="images/img1.jfif"
+              style={{transform:'30deg'}}
               className="d-block"
               height="300px"
               alt="..."
