@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { Link, useLocation, useHistory } from "react-router-dom";
-
+import "./navbar.css";
 const Navbar = () => {
   let location = useLocation();
   let history = useHistory();
@@ -12,10 +12,13 @@ const Navbar = () => {
   useEffect(() => {}, [location]);
 
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-dark" style={{minHeight:'80px', position:'sticky',top:'0',zIndex:'10'}}>
+    <nav
+      className="navbar navbar-expand-lg navbar-light bg-light"
+      style={{ minHeight: "80px", position: "sticky", top: "0", zIndex: "10" }}
+    >
       <div className="container-fluid">
         <Link className="navbar-brand" to="/">
-          Home
+          <img src="./shopping.png" alt=".." height="50"></img>
         </Link>
         <button
           className="navbar-toggler"
@@ -38,7 +41,7 @@ const Navbar = () => {
                 aria-current="page"
                 to="/Cart"
               >
-                  Cart
+                Cart
               </Link>
             </li>
 
@@ -46,7 +49,11 @@ const Navbar = () => {
               <>
                 <li className="nav-item">
                   {/* eslint-disable-next-line*/}
-                  <a onClick={handleLogout} style={{ cursor: "pointer" }} className="nav-link">
+                  <a
+                    onClick={handleLogout}
+                    style={{ cursor: "pointer" }}
+                    className="nav-link"
+                  >
                     Logout
                   </a>
                 </li>
@@ -71,7 +78,7 @@ const Navbar = () => {
                     }`}
                     to="/signup"
                   >
-                    SignUp
+                    Register
                   </Link>
                 </li>
               </>
@@ -88,6 +95,46 @@ const Navbar = () => {
               </Link>
             </li>
           </ul>
+          {localStorage.getItem("token") ? (
+            <>
+              {/* eslint-disable-next-line*/}
+                <Link
+                  className="nav-link"
+                  id="navbarDropdownMenuLink"
+                  role="img"
+                  data-target="#navbarDropdownMenuLink"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  to="/"
+                >
+                  <img src="./download.png" alt="..." width="30"></img>
+                </Link>
+                <ul
+                  className="dropdown-menu"
+                  aria-labelledby="navbarDropdownMenuLink"
+                >
+                  <li className="sign">
+                    <Link className="dropdown-item" to="/">
+                      Action
+                    </Link>
+                  </li>
+                  <br/>
+                  <li className="sign">
+                    <Link className="dropdown-item" to="/">
+                      Another action
+                    </Link>
+                  </li>
+                  <br/>
+                  <li className="sign">
+                    <Link className="dropdown-item" to="/">
+                      Something else here
+                    </Link>
+                  </li>
+                </ul>
+            </>
+          ) : (
+            <></>
+          )}
         </div>
       </div>
     </nav>

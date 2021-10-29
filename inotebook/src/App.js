@@ -22,7 +22,7 @@ import Shoes from './components/Shoes';
 function App() { 
   const [data, setdata] = useState(null);
   const [alert,setAlert] = useState(null);
-  // const {AddNote} = context;
+
   const showAlert = (message,type)=>{
     setAlert([message,type])
     setTimeout(()=>{

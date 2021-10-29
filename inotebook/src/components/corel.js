@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-let hello = { cursor: "pointer" };
-const Corel = (props) => {
+let hello = { cursor: "pointer"};
+
+const Corel = (props) => 
+{
   return (
     <>
       <div
         id="carouselExampleCaptions"
         className="carousel slide my-5"
-        style={{ backgroundColor: "grey" }}
         data-bs-ride="carousel"
         align="center"
       >
@@ -49,7 +50,6 @@ const Corel = (props) => {
               <Link to="/shoes">
             <img
               src="images/img1.jfif"
-              style={{transform:'30deg'}}
               className="d-block"
               height="300px"
               alt="..."

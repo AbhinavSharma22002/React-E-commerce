@@ -56,7 +56,7 @@ const Sign = (props) => {
           <div className="col-md-12">
             <div className="form-block mx-auto">
               <div className="text-center mb-5">
-              <h3>Sign Up to <strong>E-Commerce</strong></h3>
+              <h3>Register to <strong>E-Commerce</strong></h3>
               </div>
               {otp===null?(
               <form >

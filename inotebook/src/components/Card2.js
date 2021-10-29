@@ -11,7 +11,7 @@ const Card2 = (props) => {
           <p className="card-text">
             Best Quality Shoes
           </p>
-          <Link to="/shoes" className="btn btn-primary">
+          <Link to="/shoes" className="btn btn-danger" style={{width:'10rem'}}>
             Go
           </Link>
         </div>
@@ -24,7 +24,7 @@ const Card2 = (props) => {
           <p className="card-text">
             Best Quality Shirts
           </p>
-          <Link to="/shirt" className="btn btn-primary">
+          <Link to="/shirt" className="btn btn-danger" style={{width:'10rem'}}>
             Go
           </Link>
         </div>
@@ -37,7 +37,7 @@ const Card2 = (props) => {
           <p className="card-text">
             Best Quality Jeans
           </p>
-          <Link to="/jeans" className="btn btn-primary">
+          <Link to="/jeans" className="btn btn-danger" style={{width:'10rem'}}>
             Go
           </Link>
         </div>
@@ -50,7 +50,7 @@ const Card2 = (props) => {
           <p className="card-text">
             Best Quality Watches
           </p>
-          <Link to="/watch" className="btn btn-primary">
+          <Link to="/watch" className="btn btn-danger" style={{width:'10rem'}}>
             Go
           </Link>
         </div>
