@@ -16,7 +16,9 @@ import Data from './components/Data';
 import Shirt from './components/Shirt';
 import Watch from './components/Watch';
 import Jeans from './components/Jeans';
+import Footer from './components/Footer';
 import Shoes from './components/Shoes';
+import Product from './components/Product';
 
 
 function App() { 
@@ -61,14 +63,18 @@ function App() {
 
     {alert===null?"": <Alert m={alert}/>}
 
-    <div className="container">
+    <div className="body" style={{padding:'4vmax'}}>
     <Switch>
       <Route exact path="/">
-        {data===null?"":<Data showAlert={showAlert} data={data}/>}
+        <Product/>
       </Route>      
       <Route exact path="/Cart">
-        <Home showAlert={showAlert}/>
+      <Home showAlert={showAlert}/>
       </Route>
+      <Route exact path="/product">
+        {data===null?"":<Data showAlert={showAlert} data={data}/>}
+      </Route>
+      
   
       <Route exact path="/shoes">
       {data===null?"":<Shoes showAlert={showAlert} data={data} />}
@@ -94,6 +100,7 @@ function App() {
       </Route>
     </Switch>
     </div>
+    <Footer/>
     </Router>
     </NoteState>
 

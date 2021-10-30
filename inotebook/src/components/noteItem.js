@@ -21,8 +21,8 @@ const NoteItem = (props) => {
           </span>
           <hr/>
             <i
-              className="fas fa-trash"
-              style={{ cursor: "pointer" }}
+              className="fas fa-trash btn-danger btn"
+              style={{ cursor: "pointer"}}
               onClick={() => {
                 if(localStorage.getItem('token')){
                   props.Del(props.setnote, props.id,props.showAlert,localStorage.getItem('token'));

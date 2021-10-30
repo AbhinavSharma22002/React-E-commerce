@@ -7,6 +7,7 @@ const Data = (props) => {
   return (
     <div className="container">
         <Corel data={props.data}/>
+        <div className="my-4"></div>
         <Body data={props.data}/>
     </div>
   );

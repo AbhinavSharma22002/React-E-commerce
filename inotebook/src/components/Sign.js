@@ -1,5 +1,6 @@
 import React,{useState} from 'react';
 import { useHistory } from 'react-router';
+import { Link } from "react-router-dom";
 import  '../style.css';
 const Sign = (props) => {
     const history = useHistory();
@@ -72,14 +73,16 @@ const Sign = (props) => {
                   <label htmlFor="email">Email</label>
                   <input type="email" className="form-control" value={email} onChange={handleChange3}  placeholder="your-email@gmail.com" id="email"/>
                 </div>
-                <input type="submit" value="Proceed" className="btn btn-block btn-primary" onClick={handleSubmit1}/>
+                <div className="form-group">
+                    <input type="submit" value="Sign Up" className="btn btn-block btn-primary" onClick={handleSubmit1}/>
+                    <Link to="/login" className="mx-5" style={{color:'black', fontFamily:'sans-serif'}}>Login</Link>
+                    </div>
               </form>):(
               <form >
                 <div className="form-group first my-3">
                   <label htmlFor="username"></label>
                   <input type="text" className="form-control" value={otp} onChange={handleChange7}  placeholder="Enter the OTP send to your email" id="username"/>
                 </div>
-                <input type="submit" value="Sign Up" className="btn btn-block btn-primary" onClick={handleSubmit1}/>
               </form>)}
             </div>
           </div>

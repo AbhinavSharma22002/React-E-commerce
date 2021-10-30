@@ -3,7 +3,7 @@ import Card2 from "./Card2";
 
 const Body = (props) => {
   return (
-    <div className="row">
+    <div style={{display:'flex',flexFlow:'wrap', justifyContent:'center'}}>
          <Card2/>
     </div>
   );

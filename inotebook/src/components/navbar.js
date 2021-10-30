@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link, useLocation, useHistory } from "react-router-dom";
+import { a, useLocation, useHistory, Link } from "react-router-dom";
 import "./navbar.css";
 const Navbar = () => {
   let location = useLocation();
@@ -12,133 +12,90 @@ const Navbar = () => {
   useEffect(() => {}, [location]);
 
   return (
-    <nav
-      className="navbar navbar-expand-lg navbar-light bg-light"
-      style={{ minHeight: "80px", position: "sticky", top: "0", zIndex: "10" }}
-    >
-      <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
-          <img src="./shopping.png" alt=".." height="50"></img>
+    <>
+    <nav>
+      <div className="left">
+        <Link to="/" style={{cursor:'pointer'}}>
+          <h1>E-Store</h1>
         </Link>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
-              <Link
-                className={`nav-link ${
-                  location.pathname === "/Cart" ? "active" : ""
-                }`}
-                aria-current="page"
-                to="/Cart"
-              >
-                Cart
-              </Link>
-            </li>
+      </div>
 
-            {localStorage.getItem("token") ? (
-              <>
-                <li className="nav-item">
-                  {/* eslint-disable-next-line*/}
-                  <a
-                    onClick={handleLogout}
-                    style={{ cursor: "pointer" }}
-                    className="nav-link"
-                  >
-                    Logout
-                  </a>
-                </li>
-              </>
-            ) : (
-              <>
-                <li className="nav-item">
-                  <Link
-                    className={`nav-link ${
-                      location.pathname === "/login" ? "active" : ""
-                    }`}
-                    to="/login"
-                  >
-                    Login
-                  </Link>
-                </li>
+           <div className="mid">
+            <Link
+              className={`${location.pathname === "/" ? "active" : ""}`}
+              to="/"
+            >
+              Home
+            </Link>
+            <Link
+              className={`${location.pathname === "/product" ? "active" : ""}`}
+              to="/product"
+            >
+              Products
+            </Link>
+            <Link
+              className={`${location.pathname === "/About" ? "active" : ""}`}
+              to="/About"
+            >
+              About
+            </Link>
+            </div>
 
-                <li className="nav-item">
-                  <Link
-                    className={`nav-link ${
-                      location.pathname === "/signup" ? "active" : ""
-                    }`}
-                    to="/signup"
-                  >
-                    Register
-                  </Link>
-                </li>
-              </>
-            )}
+            
+          <div className="right">
+        {localStorage.getItem("token") ? (
+          <>
+          <Link to="/cart">
+          <img src="./shopping.png" alt="cart" height="40px"></img>
+          </Link>
+        <a
+              onClick={handleLogout}
+              style={{ cursor: "pointer" }}
+            >
+              <img src="./3343.png" alt="logout" height="40px"/>
+            </a>
+      </>
+        ) : (
+          <>
+          <Link to="/login">
+          <img src="./download.png" alt="profile" height="40px"/>
+          </Link>
+          <Link to="/cart">
+          <img src="./shopping.png" alt="cart" height="40px"></img>
+          </Link>
+        </>
+        )}
+      </div>
+    </nav>
+    </>
+  );
+};
 
-            <li className="nav-item">
-              <Link
+export default Navbar;
+
+{
+  /* <a
+onClick={handleLogout}
+style={{ cursor: "pointer" }}
+className="nav-link"
+>
+Logout
+</a> */
+}
+{/* {localStorage.getItem("token") ? (
+  <>
+  </>
+) : (
+  <></>
+)} */}
+
+{
+  /* <a
                 className={`nav-link ${
                   location.pathname === "/About" ? "active" : ""
                 }`}
                 to="/About"
               >
                 About
-              </Link>
-            </li>
-          </ul>
-          {localStorage.getItem("token") ? (
-            <>
-              {/* eslint-disable-next-line*/}
-                <Link
-                  className="nav-link"
-                  id="navbarDropdownMenuLink"
-                  role="img"
-                  data-target="#navbarDropdownMenuLink"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  to="/"
-                >
-                  <img src="./download.png" alt="..." width="30"></img>
-                </Link>
-                <ul
-                  className="dropdown-menu"
-                  aria-labelledby="navbarDropdownMenuLink"
-                >
-                  <li className="sign">
-                    <Link className="dropdown-item" to="/">
-                      Action
-                    </Link>
-                  </li>
-                  <br/>
-                  <li className="sign">
-                    <Link className="dropdown-item" to="/">
-                      Another action
-                    </Link>
-                  </li>
-                  <br/>
-                  <li className="sign">
-                    <Link className="dropdown-item" to="/">
-                      Something else here
-                    </Link>
-                  </li>
-                </ul>
-            </>
-          ) : (
-            <></>
-          )}
-        </div>
-      </div>
-    </nav>
-  );
-};
-
-export default Navbar;
+              </a> */
+}

@@ -9,7 +9,7 @@ const Corel = (props) =>
     <>
       <div
         id="carouselExampleCaptions"
-        className="carousel slide my-5"
+        className="carousel slide"
         data-bs-ride="carousel"
         align="center"
       >
@@ -52,7 +52,7 @@ const Corel = (props) =>
               src="images/img1.jfif"
               className="d-block"
               height="300px"
-              alt="..."
+              alt="shoes"
             />
             </Link>
             <div
@@ -70,7 +70,7 @@ const Corel = (props) =>
               src="images/img11.jfif"
               className="d-block"
               height="300px"
-              alt="..."
+              alt="shirt"
             />
             </Link>
             <div
@@ -88,7 +88,7 @@ const Corel = (props) =>
               src="images/img22.jfif"
               className="d-block"
               height="300px"
-              alt="..."
+              alt="jeans"
             />
             </Link>
             <div
@@ -106,7 +106,7 @@ const Corel = (props) =>
               src="images/img33.jfif"
               className="d-block"
               height="300px"
-              alt="..."
+              alt="watch"
             />
             </Link>
             <div

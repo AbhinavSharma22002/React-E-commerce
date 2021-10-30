@@ -1,0 +1,101 @@
+.home {
+    display: flex;
+    height: 90vh;
+    background-image: radial-gradient(rgb(230, 221, 255), rgb(184, 184, 223));
+  }
+
+  
+.container {
+    width: 100%;
+  }
+  
+  #rightContainer {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  #rightContainer > img {
+    margin-right: 7vmax;
+    filter: drop-shadow(0 0 20px black);
+  }
+  
+  #leftContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 3vmax;
+    box-sizing: border-box;
+    justify-content: center;
+  }
+  
+  #leftContainer > h1 {
+    font-size: 5vmax;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  }
+  #leftContainer > h2 {
+    font-size: 2vmax;
+    font-family: sans-serif;
+  }
+  #leftContainer > p {
+    margin-left: 2%;
+    color: black;
+    font-size: 1.2vmax;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  #leftContainer > button {
+    width: 11vmax;
+    padding: 0.6vmax;
+    margin-left: 2%;
+    border-radius: 2vmax;
+    border: none;
+    background-color: crimson;
+    color: white;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    cursor: pointer;
+  }
+  #leftContainer > button:hover {
+    background-color: rgb(177, 23, 54);
+  }
+
+  
+#products > h1 {
+    text-align: center;
+    margin: 5vmax auto;
+    font-size: 2.5vmax;
+    border-bottom: 5px solid crimson;
+    padding: 1vmax;
+    width: 25vw;
+  }
+  
+  .productsContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    height: 100%;
+    max-width: 80vw;
+    margin: auto;
+  }
+  
+  /* ---------------------- */
+  .product {
+    transition: all 0.3s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1vmax;
+  }
+  .product > img {
+    width: 20vmax;
+  }
+  
+  .product > h4 {
+    margin: 2%;
+  }
+  .product > h5 {
+    margin: 0px;
+  }
+  .product:hover {
+    transform: translateY(-10px);
+  }

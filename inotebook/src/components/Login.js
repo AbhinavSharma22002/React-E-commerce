@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 import "../style.css";
 
 const Login = (props) => {
@@ -72,12 +73,15 @@ const Login = (props) => {
                         id="password"
                       />
                     </div>
+                    <div className="form-group">
                     <input
                       type="submit"
                       value="Log In"
                       className="btn btn-block btn-primary"
                       onClick={handleSubmit}
                     />
+                    <Link to="/signup" className="mx-5" style={{color:'black',fontFamily:'sans-serif'}}>Register</Link>
+                    </div>
                   </form>
                 </div>
               </div>
