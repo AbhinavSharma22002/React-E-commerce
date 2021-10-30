@@ -42,7 +42,7 @@
     font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   }
   
-  #leftContainer > button {
+  #leftContainer >a> button {
     width: 11vmax;
     padding: 0.6vmax;
     margin-left: 2%;
@@ -54,7 +54,7 @@
       "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     cursor: pointer;
   }
-  #leftContainer > button:hover {
+  #leftContainer >a> button:hover {
     background-color: rgb(177, 23, 54);
   }
 

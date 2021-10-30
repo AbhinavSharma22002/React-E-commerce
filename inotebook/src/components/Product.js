@@ -1,6 +1,12 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import './product.css';
 const Product = () => {
+    let hello={
+        textDecoration:'none',
+        color:'black'
+    };
+
     return (
         <div>
             
@@ -12,7 +18,9 @@ const Product = () => {
           They say first impression is the last impression. Don't wait, Bless
           yourself with perfect clothing.
         </p>
+        <Link to="/product">
         <button>Explore Now →</button>
+        </Link>
 
       </div>
       <div class="container" id="rightContainer">
@@ -23,46 +31,49 @@ const Product = () => {
     <section id="products">
       <h1>Products</h1>
       <div class="productsContainer">
-        <div class="product">
-          <img src="./images/img1.jfif" height="500px" alt="Ist product" />
+            <Link to="/shoes" style={hello}>
+        <div class="product"><img src="./images/img1.jfif" height="500px" alt="Ist product" />
           <h4>SHIRT</h4>
-          <h5>$25</h5>
-        </div>
-        <div class="product">
-          <img src="./images/img11.jfif" height="500px" alt="Ist product" />
+          </div>
+          </Link>
+        <Link to="/shirt" style={hello}>
+        <div class="product"> <img src="./images/img11.jfif" height="500px" alt="Ist product" />
           <h4>SHIRT</h4>
-          <h5>$25</h5>
-        </div>
-        <div class="product">
-          <img src="./images/img21.jfif" height="500px" alt="Ist product" />
+         
+         </div></Link>
+        <Link to="/jeans" style={hello}>
+        <div class="product"> <img src="./images/img21.jfif" height="500px" alt="Ist product" />
           <h4>JEANS</h4>
-          <h5>$25</h5>
-        </div>
-        <div class="product">
-          <img src="./images/img31.jfif" height="500px" alt="Ist product" />
+         
+         </div></Link>
+        <Link to="/watch" style={hello}>
+        <div class="product"> <img src="./images/img31.jfif" height="500px" alt="Ist product" />
           <h4>WATCH</h4>
-          <h5>$25</h5>
-        </div>
-        <div class="product">
-          <img src="./images/img2.jfif" height="500px" alt="Ist product" />
+         
+         </div></Link>
+        <Link to="/shoes" style={hello}>
+        <div class="product"> <img src="./images/img2.jfif" height="500px" alt="Ist product" />
           <h4>SHOES</h4>
-          <h5>$25</h5>
-        </div>
-        <div class="product">
-          <img src="./images/img12.jfif" height="500px" alt="Ist product" />
+         
+         </div></Link>
+        <Link to="/shirt" style={hello}> 
+        <div class="product"><img src="./images/img12.jfif" height="500px" alt="Ist product" />
           <h4>SHIRT</h4>
-          <h5>$25</h5>
-        </div>
-        <div class="product">
-          <img src="./images/img22.jfif" height="500px" alt="Ist product" />
+         
+         </div></Link>
+        <Link to="/jeans" style={hello}>
+        <div class="product"> <img src="./images/img22.jfif" height="500px" alt="Ist product" />
           <h4>JEANS</h4>
-          <h5>$25</h5>
-        </div>
-        <div class="product">
-          <img src="./images/img32.jfif" height="500px" alt="Ist product" />
+         
+         </div>
+          </Link>
+
+        <Link to="/watch" style={hello}>
+        <div class="product">  <img src="./images/img32.jfif" height="500px" alt="Ist product" />
           <h4>WATCH</h4>
-          <h5>$25</h5>
+        
         </div>
+        </Link>
         </div>
         </section>
 
