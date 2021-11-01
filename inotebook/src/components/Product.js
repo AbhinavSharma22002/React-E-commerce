@@ -33,7 +33,7 @@ const Product = () => {
       <div class="productsContainer">
             <Link to="/shoes" style={hello}>
         <div class="product"><img src="./images/img1.jfif" height="500px" alt="Ist product" />
-          <h4>SHIRT</h4>
+          <h4>SHOES</h4>
           </div>
           </Link>
         <Link to="/shirt" style={hello}>
@@ -44,30 +44,7 @@ const Product = () => {
         <Link to="/jeans" style={hello}>
         <div class="product"> <img src="./images/img21.jfif" height="500px" alt="Ist product" />
           <h4>JEANS</h4>
-         
          </div></Link>
-        <Link to="/watch" style={hello}>
-        <div class="product"> <img src="./images/img31.jfif" height="500px" alt="Ist product" />
-          <h4>WATCH</h4>
-         
-         </div></Link>
-        <Link to="/shoes" style={hello}>
-        <div class="product"> <img src="./images/img2.jfif" height="500px" alt="Ist product" />
-          <h4>SHOES</h4>
-         
-         </div></Link>
-        <Link to="/shirt" style={hello}> 
-        <div class="product"><img src="./images/img12.jfif" height="500px" alt="Ist product" />
-          <h4>SHIRT</h4>
-         
-         </div></Link>
-        <Link to="/jeans" style={hello}>
-        <div class="product"> <img src="./images/img22.jfif" height="500px" alt="Ist product" />
-          <h4>JEANS</h4>
-         
-         </div>
-          </Link>
-
         <Link to="/watch" style={hello}>
         <div class="product">  <img src="./images/img32.jfif" height="500px" alt="Ist product" />
           <h4>WATCH</h4>
