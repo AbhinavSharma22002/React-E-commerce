@@ -67,36 +67,79 @@
     padding: 1vmax;
     width: 25vw;
   }
-  
-  .productsContainer {
+
+  /*---------------------------------*/
+  .productsContainer{
     display: flex;
+    flex-direction: row;
     justify-content: center;
-    flex-wrap: wrap;
-    margin: auto;
-  }
-  
-  /* ---------------------- */
-  .product {
-    transition: all 0.3s;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
     align-items: center;
-    margin: 1vmax;
   }
-  .product > img {
-    width: 20vmax;
-  }
-  
-  .product > h4 {
-    margin: 2%;
-  }
-  .product > h5 {
-    margin: 0px;
-  }
-  .product:hover{
-    transform: translateY(-10px);
-    opacity: 0.1;
-  }
-  
+  .container{
+    position: relative;
+}
+.container .card{
+    position: relative;
+    width: 320px;
+    height: 450px;
+    background: #232323;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.container .card:hover::before{
+    clip-path: circle(300px at 80% -20%);
+}
+.container .card .imgBx{
+    position: absolute;
+    top: 40%;
+    transform: translateY(-50%);
+    z-index: 10000;
+    width: 100%;
+    height: 90px;
+    transition: 0.5s;
+}
+.container .card:hover .imgBx{
+    top: 0%;
+    transform: translateY(0%);
+}
+.container .card .imgBx img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.container .card .contentBx{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+    opacity: 0;
+}
+.container .card:hover .contentBx{
+    opacity: 1;
+    height: 200px;
+}
+.container .card .contentBx h2{
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    transform: 0.1s ease-in;
+    color: #fff;
+}
+.container .card .contentBx a{
+    line-height: 40px;
+    background: whitesmoke;
+    border-radius: 5px;
+    padding: 10px;
+    color: black;
+    cursor: pointer;
+    visibility: hidden;
+    transform: .5s;
+}
+
+.container .card:hover .contentBx .size,.container .card:hover .contentBx .color,.container .card:hover .contentBx a{
+    visibility: visible;
+}
   

@@ -73,14 +73,14 @@ const Login = (props) => {
                         id="password"
                       />
                     </div>
-                    <div className="form-group">
+                    <div className="form-group" style={{display:'flex',flexDirection:'row'}}>
                     <input
                       type="submit"
                       value="Log In"
                       className="btn btn-block btn-primary"
                       onClick={handleSubmit}
                     />
-                    <Link to="/signup" className="mx-5" style={{color:'black',fontFamily:'sans-serif'}}>Register</Link>
+                    <Link to="/signup" className="btn mx-5" style={{fontFamily:'sans-serif'}}>Register</Link>
                     </div>
                   </form>
                 </div>

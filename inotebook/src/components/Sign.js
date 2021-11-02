@@ -73,9 +73,9 @@ const Sign = (props) => {
                   <label htmlFor="email">Email</label>
                   <input type="email" className="form-control" value={email} onChange={handleChange3}  placeholder="your-email@gmail.com" id="email"/>
                 </div>
-                <div className="form-group">
+                <div className="form-group" style={{display:'flex',flexDirection:'row'}}>
                     <input type="submit" value="Sign Up" className="btn btn-block btn-primary" onClick={handleSubmit1}/>
-                    <Link to="/login" className="mx-5" style={{color:'black', fontFamily:'sans-serif'}}>Login</Link>
+                    <Link to="/login" className="mx-5 btn" style={{fontFamily:'sans-serif'}}>Login</Link>
                     </div>
               </form>):(
               <form >

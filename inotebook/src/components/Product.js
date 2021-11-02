@@ -31,26 +31,65 @@ const Product = () => {
     <section id="products">
       <h1>Products</h1>
       <div class="productsContainer">
-            <Link to="/shoes" style={hello}>
-        <div class="product"><img src="./images/img1.jfif" height="500px" alt="Ist product" />
-          <h4>SHOES</h4>
-          </div>
+        <div className="container">
+            <div class="card">
+            <div class="imgBx">
+                <img src="./images/img5.jfif" alt="" height="350px" width="90%"/>
+            </div>
+            <div class="contentBx">
+                <h2>Shoes</h2>
+            <Link to="/product" style={hello}>
+                <a href="#">Check Products out!!</a>
           </Link>
-        <Link to="/shirt" style={hello}>
-        <div class="product"> <img src="./images/img11.jfif" height="500px" alt="Ist product" />
-          <h4>SHIRT</h4>
-         
-         </div></Link>
-        <Link to="/jeans" style={hello}>
-        <div class="product"> <img src="./images/img21.jfif" height="500px" alt="Ist product" />
-          <h4>JEANS</h4>
-         </div></Link>
-        <Link to="/watch" style={hello}>
-        <div class="product">  <img src="./images/img32.jfif" height="500px" alt="Ist product" />
-          <h4>WATCH</h4>
-        
+            </div>
+            </div>
         </div>
-        </Link>
+
+        <div className="container">
+            <div class="card">
+            <div class="imgBx">
+                <img src="./images/img31.jfif" alt="" height="350px" width="90%"/>
+            </div>
+            <div class="contentBx">
+                <h2>Watch</h2>
+            <Link to="/product" style={hello}>
+                <a href="#">Check Products out!!</a>
+          </Link>
+            </div>
+            </div>
+        </div>
+
+
+
+        <div className="container">
+            <div class="card">
+            <div class="imgBx">
+                <img src="./images/img21.jfif" alt="" height="350px" width="90%"/>
+            </div>
+            <div class="contentBx">
+                <h2>Jeans</h2>
+            <Link to="/product" style={hello}>
+                <a href="#">Check Products out!!</a>
+          </Link>
+            </div>
+            </div>
+        </div>
+
+
+
+        <div className="container">
+            <div class="card">
+            <div class="imgBx">
+            <img src="./images/img11.jfif" height="350px" width="90%" alt="Ist product" />
+            </div>
+            <div class="contentBx">
+                <h2>Shirt</h2>
+            <Link to="/product" style={hello}>
+                <a href="#">Check Products out!!</a>
+          </Link>
+            </div>
+            </div>
+        </div>
         </div>
         </section>
 

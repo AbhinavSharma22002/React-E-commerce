@@ -45,7 +45,6 @@ function App() {
       const json = await response.json();
       if (response.status === 200) {
         setdata(json);
-        showAlert("Success", "success");
       } else {
         showAlert("Error", "danger");
       }
