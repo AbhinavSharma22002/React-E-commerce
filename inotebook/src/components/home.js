@@ -14,7 +14,7 @@ const Home = (props) => {
   // eslint-disable-next-line
   useEffect(async() => {
     if(localStorage.getItem('token')){
-      setnote1(await FetchNotes(localStorage.getItem('token'),setnote1));
+      setnote1(await FetchNotes(localStorage.getItem('token')));
     }
     else{
       props.showAlert("Please Log In!!","danger")

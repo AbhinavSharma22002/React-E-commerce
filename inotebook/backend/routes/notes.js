@@ -33,18 +33,20 @@ router.post(
     // }
 
     try {
-      const { image,name,category, price} = req.body;
-
+      const { image,name,category, price, note_id} = req.body;
+      const number = 1;
       const note = {
         image,
         name,
+        number,
+        note_id: note_id,
         category,
         price,
         user: req.user.id,
       };
       const savedNote = await Notes.create(note);
       const notes = await Notes.find({ user: req.user.id });
-      res.json(notes);
+      res.json(savedNote);
 
     } catch (error) {
         console.log(error.message);
@@ -56,34 +58,44 @@ router.post(
 
 //Route 3:  Update an existing note
 router.put('/updatenotes/:id',fetchuser, async (req,res)=>{
-const {title,description,tag} = req.body;
-
-//creation a newNote object
-const newNote = {};
-if(title){
-    newNote.title = title;
-}
-if(description){
-    newNote.description = description;
-}
-if(tag){
-    newNote.tag = tag;
-}
+const {user,image,name,category,price} = req.body;
 
 //find the note to be updated
-
-let note = await Notes.findById(req.params.id);
+let note = await Notes.find({note_id: req.params.id});
+let n=note[0].number;
 
 if(!note){
    return res.status(404).send("NOT FOUND");
 }
 
-if(note.user.toString() !== req.user.id){
+if(note[0].user.toString() !== req.user.id){
     return res.status(401).send("Unauthorized access");
 }
 
-note = await Notes.findByIdAndUpdate(req.params.id,{$set: newNote},{new:true});
+
+//creation a newNote object
+const newNote = {};
+if(user){
+    newNote.user = user;
+}
+if(image){
+    newNote.image = image;
+}
+if(name){
+    newNote.name = name;
+}
+  newNote.number = n + 1;
+
+if(category){
+  newNote.category = category;
+}
+if(price){
+  newNote.price = price;
+}
+
+note = await Notes.findByIdAndUpdate(note[0]._id,{$set: newNote},{new:true});
 res.json({note});
+
 });
 
 //Route 4:  Delete a note

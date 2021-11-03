@@ -36,6 +36,8 @@ const NoteItem = (props) => {
                 }
               }}
             > Remove</i>
+            
+          <h3>{props.notes.number}</h3>
         </div>
 
       </div>

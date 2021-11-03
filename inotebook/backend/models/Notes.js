@@ -13,6 +13,14 @@ const NotesSchema = new Schema({
         type: String,
         required: true
     },
+    note_id:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref:'datas'
+    },
+    number:{
+        type: Number,
+        required: true
+    },
     category:{
         type: String,
         required: true

@@ -2,7 +2,7 @@ import noteContext from "./noteContext";
 
 const NoteState = (props) => {
 
-  const FetchNotes = async (a,b) => {
+  const FetchNotes = async (a) => {
     const requestOptions = {
       method: "GET",
       headers: {
@@ -17,41 +17,21 @@ const NoteState = (props) => {
     return data;
   };
 
-  // const AddNotes = async(item,a,b,c) => {
-  //   const requestOptions = {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       "auth-token":c
-  //         },
-  //     body: JSON.stringify({
-  //       image: item.image,
-  //       name: item.name,
-  //       category: item.category,
-  //       price: item.price
-  //     }),
-  //   };
-  //   const response = await fetch(
-  //     "http://localhost:5000/api/notes/addNote",
-  //     requestOptions
-  //   );
-  //   const data = await response.json();
-  //   if(response.status===200){
-  //     a(data);
-  //     b("Added","success");
-  //   }
-  //   else{
-  //     console.log(data);
-  //     b("Error","danger");
-  //   }
-  // };
 
+  function filterArrayElementByEdit(array,b) {
+    for(let i=0;i<array.length;i++){
+      if(array[i].name===b){
+        return false;
+      }
+    }
+    return true;
+  }
   
   const AddNote = async(item,b,c) => {
-    // console.log(item);
-    let arr = await FetchNotes(c,b);
-    console.log(arr.filter((element)=> element._id));
 
+    let arr = await FetchNotes(c,b);
+
+    if(filterArrayElementByEdit(arr,item.name)){
     const requestOptions = {
       method: "POST",
       headers: {
@@ -61,6 +41,8 @@ const NoteState = (props) => {
       body: JSON.stringify({
         image: item.image,
         name: item.name,
+        number: 1,
+        note_id: item._id,
         category: item.category,
         price: item.price
       }),
@@ -77,35 +59,38 @@ const NoteState = (props) => {
       console.log(data);
       b("Error","danger");
     }
+    }
+    else{
+      const requestOptions = {
+        method: "PUT",
+        headers: {
+          "Content-Type": "application/json",
+          "auth-token":c
+            },
+        body: JSON.stringify({
+          image: item.image,
+        name: item.name,
+        category: item.category,
+        price: item.price
+        }),
+      };
+      const response = await fetch(
+        `http://localhost:5000/api/notes/updatenotes/${item._id}`,
+        requestOptions
+      );
+
+      const data = await response.json();
+      if(response.status===200){
+        b("Added","success");
+      }
+      else{
+        console.log(data);
+        b("Error","danger");
+      }
+    }
+
   };
 
-  // const updateNote = async (title,desc,tag,a,b,c) => {
-  //   const requestOptions = {
-  //     method: "PUT",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //       "auth-token":a
-  //     },
-  //     body: JSON.stringify({
-  //       title: title,
-  //       description: desc,
-  //       tag: tag
-  //     }),
-  //   };
-  //   const response = await fetch(
-  //     "http://localhost:5000/api/notes/updatenotes/".concat(c),
-  //     requestOptions
-  //   );
-  //   // eslint-disable-next-line
-  //   const data = await response.json();
-  //   if(response.status===200){
-      
-  //     b("Updated","success"); 
-  //   }
-  //   else{
-  //     b("Error","danger");
-  //   }
-  // };
 
   const deleteNote = async(a,b,c,d) => {
     const requestOptions = {
