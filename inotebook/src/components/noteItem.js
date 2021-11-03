@@ -4,7 +4,7 @@ const NoteItem = (props) => {
   return (
     <>
 
-      <div className="card my-4" style={{background:'white', color:'red'}}>
+      <div className="card my-4" style={{background:'white', color:'#dc3545'}}>
         <div className="card-body">
           {/* <div className="d-flex align-items-center">
             <h5 className="card-title">{props.notes.category.toUpperCase()}</h5>
@@ -15,7 +15,7 @@ const NoteItem = (props) => {
           <span className="card-text">
             <img src={`./images/${props.notes.image}`} alt={props.notes.category}></img>
             <span style={{float:'right',fontSize:'40px'}}>
-              <p style={{color:'red'}}>Price:{props.notes.price}</p>
+              <p style={{color:'#dc3545'}}>Price:{props.notes.price}</p>
             </span>
           </span>
           <hr/>

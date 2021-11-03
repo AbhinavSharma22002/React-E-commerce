@@ -14,7 +14,7 @@ const Card = (props) => {
               Price:
               {props.item.price}
               <br/>
-              <button className="btn btn-success my-4" style={{width:'100%',padding:'10px'}} onClick={()=>{props.order(props.item)}}>
+              <button className="btn btn-danger my-4" style={{width:'100%',padding:'10px'}} onClick={()=>{props.order(props.item)}}>
                 Order Now
               </button>
               </span>

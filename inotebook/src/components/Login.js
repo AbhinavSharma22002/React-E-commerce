@@ -77,10 +77,10 @@ const Login = (props) => {
                     <input
                       type="submit"
                       value="Log In"
-                      className="btn btn-block btn-primary"
+                      className="btn btn-block btn-danger"
                       onClick={handleSubmit}
                     />
-                    <Link to="/signup" className="mx-5 btn" style={{fontFamily:"serif",textDecorationLine:'none', color:"#0d6efd"}}>Register</Link>
+                    <Link to="/signup" className="mx-5 btn" style={{fontFamily:"serif",textDecorationLine:'none', color:"#dc3545"}}>Register</Link>
                     </div>
                   </form>
                 </div>

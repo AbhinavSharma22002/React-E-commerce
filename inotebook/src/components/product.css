@@ -48,14 +48,14 @@
     margin-left: 2%;
     border-radius: 2vmax;
     border: none;
-    background-color: crimson;
+    background-color: #dc3545;
     color: white;
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
       "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     cursor: pointer;
   }
   #leftContainer >a> button:hover {
-    background-color: rgb(177, 23, 54);
+    background-color: #dc3545;
   }
 
   
@@ -63,7 +63,7 @@
     text-align: center;
     margin: 5vmax auto;
     font-size: 2.5vmax;
-    border-bottom: 5px solid crimson;
+    border-bottom: 5px solid #dc3545;
     padding: 1vmax;
     width: 25vw;
   }
@@ -126,7 +126,7 @@
     font-weight: 600;
     letter-spacing: 1px;
     transform: 0.1s ease-in;
-    color: rgb(223, 10, 10);
+    color: #dc3545;
 }
 .container1 .card .contentBx a{
     line-height: 40px;
@@ -144,6 +144,6 @@
 }
 
 .container1 .card .contentBx a:hover{
- background-color: rgb(203, 87, 87);
+ background-color: #dc3545;
  color: white;
 }
