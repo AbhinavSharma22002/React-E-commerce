@@ -5,7 +5,7 @@
   }
 
   
-.container {
+.container1 {
     width: 100%;
   }
   
@@ -75,21 +75,21 @@
     justify-content: center;
     align-items: center;
   }
-  .container{
+  .container1{
     position: relative;
 }
-.container .card{
+.container1 .card{
     position: relative;
     width: 320px;
     height: 450px;
-    background: #232323;
+    background: white;
     border-radius: 20px;
     overflow: hidden;
 }
-.container .card:hover::before{
+.container1 .card:hover::before{
     clip-path: circle(300px at 80% -20%);
 }
-.container .card .imgBx{
+.container1 .card .imgBx{
     position: absolute;
     top: 40%;
     transform: translateY(-50%);
@@ -98,17 +98,17 @@
     height: 90px;
     transition: 0.5s;
 }
-.container .card:hover .imgBx{
+.container1 .card:hover .imgBx{
     top: 0%;
     transform: translateY(0%);
 }
-.container .card .imgBx img{
+.container1 .card .imgBx img{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
 }
-.container .card .contentBx{
+.container1 .card .contentBx{
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -117,18 +117,18 @@
     z-index: 10;
     opacity: 0;
 }
-.container .card:hover .contentBx{
+.container1 .card:hover .contentBx{
     opacity: 1;
     height: 200px;
 }
-.container .card .contentBx h2{
+.container1 .card .contentBx h2{
     position: relative;
     font-weight: 600;
     letter-spacing: 1px;
     transform: 0.1s ease-in;
-    color: #fff;
+    color: rgb(223, 10, 10);
 }
-.container .card .contentBx a{
+.container1 .card .contentBx a{
     line-height: 40px;
     background: whitesmoke;
     border-radius: 5px;
@@ -139,7 +139,11 @@
     transform: .5s;
 }
 
-.container .card:hover .contentBx .size,.container .card:hover .contentBx .color,.container .card:hover .contentBx a{
+.container1 .card:hover .contentBx .size,.container1 .card:hover .contentBx .color,.container1 .card:hover .contentBx a{
     visibility: visible;
 }
-  
+
+.container1 .card .contentBx a:hover{
+ background-color: rgb(203, 87, 87);
+ color: white;
+}

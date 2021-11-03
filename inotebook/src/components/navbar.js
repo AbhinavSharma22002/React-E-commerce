@@ -39,30 +39,34 @@ const Navbar = () => {
             >
               About
             </Link>
+            {localStorage.getItem("token")?(<></>):(<Link
+              className={`${location.pathname === "/login" ? "active" : ""}`}
+              to="/login"
+            >
+              Login
+            </Link>)}
+            <Link
+              className={`${location.pathname === "/cart" ? "active" : ""}`}
+              to="/cart"
+            >
+              Cart
+            </Link>
             </div>
 
             
           <div className="right">
         {localStorage.getItem("token") ? (
           <>
-          <Link to="/cart">
-          <img src="./shopping.png" alt="cart" height="40px"></img>
-          </Link>
         <a
               onClick={handleLogout}
               style={{ cursor: "pointer" }}
             >
               <img src="./3343.png" alt="logout" height="40px"/>
+              Logout
             </a>
       </>
         ) : (
           <>
-          <Link to="/login">
-          <img src="./download.png" alt="profile" height="40px"/>
-          </Link>
-          <Link to="/cart">
-          <img src="./shopping.png" alt="cart" height="40px"></img>
-          </Link>
         </>
         )}
       </div>

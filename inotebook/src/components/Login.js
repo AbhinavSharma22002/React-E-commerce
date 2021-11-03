@@ -80,7 +80,7 @@ const Login = (props) => {
                       className="btn btn-block btn-primary"
                       onClick={handleSubmit}
                     />
-                    <Link to="/signup" className="btn mx-5" style={{fontFamily:'sans-serif'}}>Register</Link>
+                    <Link to="/signup" className="mx-5 btn" style={{fontFamily:"serif",textDecorationLine:'none', color:"#0d6efd"}}>Register</Link>
                     </div>
                   </form>
                 </div>

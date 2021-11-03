@@ -75,7 +75,7 @@ const Sign = (props) => {
                 </div>
                 <div className="form-group" style={{display:'flex',flexDirection:'row'}}>
                     <input type="submit" value="Sign Up" className="btn btn-block btn-primary" onClick={handleSubmit1}/>
-                    <Link to="/login" className="mx-5 btn" style={{fontFamily:'sans-serif'}}>Login</Link>
+                    <Link to="/login" className="mx-5 btn" style={{fontFamily:"serif",textDecorationLine:'none', color:"#0d6efd"}}>Login</Link>
                     </div>
               </form>):(
               <form >
