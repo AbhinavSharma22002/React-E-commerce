@@ -1,11 +1,12 @@
 import noteContext from "./noteContext";
 
 const NoteState = (props) => {
+
   const FetchNotes = async (a,b) => {
     const requestOptions = {
       method: "GET",
       headers: {
-        "auth-token":b
+        "auth-token":a
       },
     };
     const response = await fetch(
@@ -13,7 +14,7 @@ const NoteState = (props) => {
       requestOptions
     );
     const data = await response.json();
-   a(data);
+    return data;
   };
 
   // const AddNotes = async(item,a,b,c) => {
@@ -44,7 +45,13 @@ const NoteState = (props) => {
   //     b("Error","danger");
   //   }
   // };
+
+  
   const AddNote = async(item,b,c) => {
+    // console.log(item);
+    let arr = await FetchNotes(c,b);
+    console.log(arr.filter((element)=> element._id));
+
     const requestOptions = {
       method: "POST",
       headers: {

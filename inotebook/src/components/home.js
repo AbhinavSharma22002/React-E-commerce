@@ -7,13 +7,14 @@ const Home = (props) => {
   const context = useContext(NoteContext);
   const {FetchNotes,deleteNote} = context;
   const {showAlert} = props;
-  const [note, setnote] = useState([]);
+  const [note, setnote1] = useState([]);
 
 
   let history = useHistory();
-  useEffect(() => {
+  // eslint-disable-next-line
+  useEffect(async() => {
     if(localStorage.getItem('token')){
-      FetchNotes(setnote,localStorage.getItem('token'));
+      setnote1(await FetchNotes(localStorage.getItem('token'),setnote1));
     }
     else{
       props.showAlert("Please Log In!!","danger")
@@ -26,7 +27,7 @@ const Home = (props) => {
   return (
     <div>
       <div className="container">
-        <Notes note={note} setnote={setnote} showAlert={showAlert} deleteNote={deleteNote} FetchNotes={FetchNotes}/>
+        <Notes note={note} setnote={setnote1} showAlert={showAlert} deleteNote={deleteNote} FetchNotes={FetchNotes}/>
       </div>
     </div>
   );

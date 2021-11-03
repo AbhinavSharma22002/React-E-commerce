@@ -9,10 +9,10 @@ const Data = (props) => {
 
   return (
     <div className="container">
-        <form style={{display:"flex", justifyContent:"center", alignContent:"center"}}>
-        <input className="searchBox" type="text" id="searchbox1" placeholder="Search" onClick={()=>{document.getElementsByClassName("body1").style.opacity = "0";}}/>
+        {/* <form style={{display:"flex", justifyContent:"center", alignContent:"center"}}>
+        <input className="searchBox" type="text" id="searchbox1" placeholder="Search"/>
         <input className="submit" type="submit" placeholder="Submit"></input>
-        </form>
+        </form> */}
         <div className="my-4 body1"></div>
         <Body data={props.data}/>
     </div>
