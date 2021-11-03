@@ -1,6 +1,8 @@
+// eslint-disable-next-line
 import { body } from "express-validator";
 import React from "react";
 import Body from "./Body";
+// eslint-disable-next-line
 import Corel from "./corel";
 const Data = (props) => {
  

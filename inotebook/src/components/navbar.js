@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { a, useLocation, useHistory, Link } from "react-router-dom";
+import { useLocation, useHistory, Link } from "react-router-dom";
 import "./navbar.css";
 const Navbar = () => {
   let location = useLocation();
@@ -57,6 +57,7 @@ const Navbar = () => {
           <div className="right">
         {localStorage.getItem("token") ? (
           <>
+          {/* eslint-disable-next-line*/}
         <a
               onClick={handleLogout}
               style={{ cursor: "pointer" }}
@@ -76,30 +77,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-
-{
-  /* <a
-onClick={handleLogout}
-style={{ cursor: "pointer" }}
-className="nav-link"
->
-Logout
-</a> */
-}
-{/* {localStorage.getItem("token") ? (
-  <>
-  </>
-) : (
-  <></>
-)} */}
-
-{
-  /* <a
-                className={`nav-link ${
-                  location.pathname === "/About" ? "active" : ""
-                }`}
-                to="/About"
-              >
-                About
-              </a> */
-}
