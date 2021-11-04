@@ -5,7 +5,7 @@ import NoteContext from "../context/notes/noteContext";
 
 const Home = (props) => {
   const context = useContext(NoteContext);
-  const {FetchNotes,deleteNote} = context;
+  const {FetchNotes,deleteNote, UpdateNote} = context;
   const {showAlert} = props;
   const [note, setnote1] = useState([]);
 
@@ -27,7 +27,7 @@ const Home = (props) => {
   return (
     <div>
       <div className="container">
-        <Notes note={note} setnote={setnote1} showAlert={showAlert} deleteNote={deleteNote} FetchNotes={FetchNotes}/>
+        <Notes note={note} setnote={setnote1} showAlert={showAlert} UpdateNote={UpdateNote} deleteNote={deleteNote} FetchNotes={FetchNotes}/>
       </div>
     </div>
   );

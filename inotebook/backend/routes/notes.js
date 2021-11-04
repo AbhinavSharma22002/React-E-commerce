@@ -21,17 +21,7 @@ router.get("/fetchallNotes", fetchuser, async (req, res) => {
 router.post(
   "/addNote",
   fetchuser,
-  // [
-  //   body("title", "Enter a valid title").isLength({ min: 3 }),
-  //   body("description", "Enter a valid description").isLength({ min: 7 }),
-  // ],
   async (req, res) => {
-    //If there are errors, return bad request
-    // const errors = validationResult(req);
-    // if (!errors.isEmpty()) {
-    //   return res.status(400).json({ errors: errors.array() });
-    // }
-
     try {
       const { image,name,category, price, note_id} = req.body;
       const number = 1;
@@ -58,10 +48,11 @@ router.post(
 
 //Route 3:  Update an existing note
 router.put('/updatenotes/:id',fetchuser, async (req,res)=>{
-const {user,image,name,category,price} = req.body;
+const {user,image,name,category,price,val} = req.body;
 
 //find the note to be updated
 let note = await Notes.find({note_id: req.params.id});
+
 let n=note[0].number;
 
 if(!note){
@@ -71,7 +62,6 @@ if(!note){
 if(note[0].user.toString() !== req.user.id){
     return res.status(401).send("Unauthorized access");
 }
-
 
 //creation a newNote object
 const newNote = {};
@@ -84,7 +74,11 @@ if(image){
 if(name){
     newNote.name = name;
 }
+
+if(val===1)
   newNote.number = n + 1;
+else
+newNote.number = n - 1;
 
 if(category){
   newNote.category = category;

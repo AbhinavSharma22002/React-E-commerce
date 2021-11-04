@@ -14,6 +14,7 @@ const Notes = (props) => {
               notes={notes}
               y = {props.note}
               Del={props.deleteNote}
+              Up={props.UpdateNote}
               id={notes._id}
               showAlert={props.showAlert}
               setnote={props.setnote}

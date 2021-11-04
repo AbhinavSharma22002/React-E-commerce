@@ -68,27 +68,50 @@ const NoteState = (props) => {
           "auth-token":c
             },
         body: JSON.stringify({
+          user: item.user,
           image: item.image,
         name: item.name,
         category: item.category,
+        val: 1,
         price: item.price
         }),
       };
-      const response = await fetch(
+       const response = await fetch(
         `http://localhost:5000/api/notes/updatenotes/${item._id}`,
         requestOptions
       );
+      await response.json();
 
-      const data = await response.json();
       if(response.status===200){
         b("Added","success");
       }
       else{
-        console.log(data);
         b("Error","danger");
       }
     }
 
+  };
+
+  const UpdateNote = async(item,a,c) =>{
+    const requestOptions = {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        "auth-token":c
+          },
+      body: JSON.stringify({
+        user: item.user,
+        image: item.image,
+      name: item.name,
+      category: item.category,
+      val: a,
+      price: item.price
+      }),
+    };
+     await fetch(
+      `http://localhost:5000/api/notes/updatenotes/${item.note_id}`,
+      requestOptions
+    );
   };
 
 
@@ -105,7 +128,7 @@ const NoteState = (props) => {
       requestOptions
     );
     // eslint-disable-next-line
-    const data = await response.json();
+    // const data = await response.json();
     if(response.status===200){
       c("Deleted","success");
     }else{
@@ -114,7 +137,7 @@ const NoteState = (props) => {
   };
 
   return (
-    <noteContext.Provider value={{FetchNotes, AddNote, deleteNote}}>
+    <noteContext.Provider value={{FetchNotes, AddNote, deleteNote,UpdateNote}}>
       {props.children}
     </noteContext.Provider>
   );

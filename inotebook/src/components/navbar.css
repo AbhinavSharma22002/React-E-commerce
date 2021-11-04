@@ -64,11 +64,3 @@ nav {
   color: white !important;
   border-radius: 10px;
 }
-/* @keyframes rotate {
-    0%{
-      filter: hue-rotate(0deg);
-    }
-    100%{
-      filter: hue-rotate(360deg);
-    }
-  } */
