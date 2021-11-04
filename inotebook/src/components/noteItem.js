@@ -1,7 +1,6 @@
 import { useHistory } from "react-router";
 const NoteItem = (props) => {
   let history = useHistory();
-
   return (
     <>
       <div className="card my-4" style={{background:'white', color:'#dc3545'}}>
@@ -23,6 +22,7 @@ const NoteItem = (props) => {
                 let arr = props.y.filter(function(item) {
                   if(item._id===props.notes._id){
                     item.number = item.number +1;
+                    item.payment = item.payment +item.price;
                   }
                   return item;
               });
@@ -41,6 +41,7 @@ const NoteItem = (props) => {
                   let arr = props.y.filter(function(item) {
                     if(item._id===props.notes._id){
                       item.number = item.number -1;
+                      item.payment = item.payment -item.price;
                     }
                     return item;
                 });
@@ -48,10 +49,11 @@ const NoteItem = (props) => {
 
                  }
                  else{
-                  props.Del(props.setnote, props.id,props.showAlert,localStorage.getItem('token'));
+                  props.Del(props.setnote, props.notes._id,props.showAlert,localStorage.getItem('token'));
+
                   let arr = props.y.filter(function(item) {
-                    return item._id !== props.id
-                })
+                    return item._id !== props.notes._id;
+                });
                   props.setnote(arr);
                  }
               }
@@ -67,9 +69,9 @@ const NoteItem = (props) => {
               style={{ cursor: "pointer"}}
               onClick={() => {
                 if(localStorage.getItem('token')){
-                  props.Del(props.setnote, props.id,props.showAlert,localStorage.getItem('token'));
+                  props.Del(props.setnote, props.notes._id,props.showAlert,localStorage.getItem('token'));
                   let arr = props.y.filter(function(item) {
-                    return item._id !== props.id
+                    return item._id !== props.notes._id;
                 })
                   props.setnote(arr); 
                 }

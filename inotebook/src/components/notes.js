@@ -1,5 +1,10 @@
 import NoteItem from "./noteItem";
 const Notes = (props) => {
+  let price =0;
+
+  const Left = (a)=>{
+    price +=a;
+  };
   return (
     <>     
     <div className="my-5 bg-white" style={{width:'70%'}}>
@@ -8,6 +13,7 @@ const Notes = (props) => {
       <p style={{color:'#dc3545'}}>{props.note.length===0 && 'Cart is Empty!! Please Add!!'}</p>
       <div className="container row" style={{overflowX:'hidden',overflowY:'visible',scrollbarWidth:'none'}}>
         {props.note.map((notes) => {
+          Left(notes.payment);
           return (
             <NoteItem
               key={notes._id}
@@ -15,7 +21,6 @@ const Notes = (props) => {
               y = {props.note}
               Del={props.deleteNote}
               Up={props.UpdateNote}
-              id={notes._id}
               showAlert={props.showAlert}
               setnote={props.setnote}
             />
@@ -27,9 +32,34 @@ const Notes = (props) => {
       <div className="my-5 bg-white" style={{width:'20%'}}>
         <h1 className="text-center">Place Order</h1>
         <hr/>
+        {props.note.length===0?<>
         <p style={{color:'#dc3545'}}>{props.note.length===0 && 'Cart is Empty!! Please Add!!'}</p>
-        <div>
+        </>:<> <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignContent:'center'}}>
+          <table cellPadding="20px">
+            <tbody>
+            <tr>
+              <td>Total Amount</td>
+              <td>{price}</td>
+            </tr>
+            <tr>
+              <td>Tax</td>
+              <td>95%</td>
+            </tr>
+            <tr>
+              <td>Payable Amount</td>
+              <td>{price+(price*(95/100))}</td>
+            </tr>
+            <tr aria-colspan="2">
+              <td>
+              {/*eslint-disable-next-line*/}
+                <a className="btn btn-danger">Place Order!!</a>
+              </td>
+            </tr>
+            </tbody>
+          </table>
         </div>
+        </>}
+       
       </div>
     </>
   );
