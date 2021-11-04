@@ -38,6 +38,7 @@ router.post(
       user = await User.create({
         name: name,
         password: hash,
+        address: '',
         email: email
       });
 
@@ -108,8 +109,6 @@ router.post(
 router.post(
   "/getuser",fetchUser,
   async (req, res) => {
-
-
     try {
       let userId = req.user.id;
       const user = await User.findById(userId).select("-password");

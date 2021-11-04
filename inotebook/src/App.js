@@ -19,6 +19,7 @@ import Jeans from './components/Jeans';
 import Footer from './components/Footer';
 import Shoes from './components/Shoes';
 import Product from './components/Product';
+import Payment from './components/Payment';
 
 
 function App() { 
@@ -73,8 +74,9 @@ function App() {
       <Route exact path="/product">
         {data===null?"":<Data showAlert={showAlert} data={data}/>}
       </Route>
-      
-  
+      <Route exact path="/payment">
+        <Payment/>
+        </Route>
       <Route exact path="/shoes">
       {data===null?"":<Shoes showAlert={showAlert} data={data} />}
       </Route>      

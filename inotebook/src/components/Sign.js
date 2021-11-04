@@ -37,7 +37,7 @@ const Sign = (props) => {
             props.showAlert("Account Created Successfully!!","success");
         }
         else{
-            props.showAlert("Invalid credentials","danger");
+            props.showAlert("Invalid Credentials!!","danger");
         }
         setotp(null);
   }

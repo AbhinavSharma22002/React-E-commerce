@@ -1,9 +1,37 @@
+import { Link } from "react-router-dom";
 import NoteItem from "./noteItem";
+import { useHistory } from "react-router";
 const Notes = (props) => {
+  let history = useHistory();
   let price =0;
 
   const Left = (a)=>{
     price +=a;
+  };
+
+  const handleClick = async (a)=>{
+    if(localStorage.getItem('token')){
+      const requestOptions = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "auth-token": localStorage.getItem('token'),
+        }
+      };
+      const response = await fetch(
+        'http://localhost:5000/api/auth/getUser',
+        requestOptions
+      );
+      const data = await response.json();
+      console.log(data);
+    }
+    else{
+      props.showAlert("Please Log In!!","danger");
+      history.push('/login');
+    }
+
+
+   
   };
   return (
     <>     
@@ -52,7 +80,7 @@ const Notes = (props) => {
             <tr aria-colspan="2">
               <td>
               {/*eslint-disable-next-line*/}
-                <a className="btn btn-danger">Place Order!!</a>
+                <Link to="/payment" className="btn btn-danger" onClick={()=>{handleClick(price+(price*(95/100)))}}>Place Order!!</Link>
               </td>
             </tr>
             </tbody>
