@@ -1,7 +1,5 @@
-import { useState } from "react";
 import NoteItem from "./noteItem";
 const Notes = (props) => {
-  const [price, setprice] = useState([]);
   return (
     <>     
     <div className="my-5 bg-white" style={{width:'70%'}}>
@@ -14,7 +12,6 @@ const Notes = (props) => {
             <NoteItem
               key={notes._id}
               notes={notes}
-              setprice={setprice}
               y = {props.note}
               Del={props.deleteNote}
               Up={props.UpdateNote}
@@ -32,7 +29,6 @@ const Notes = (props) => {
         <hr/>
         <p style={{color:'#dc3545'}}>{props.note.length===0 && 'Cart is Empty!! Please Add!!'}</p>
         <div>
-          {console.log(price)}
         </div>
       </div>
     </>

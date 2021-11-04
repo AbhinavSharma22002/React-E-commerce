@@ -9,6 +9,10 @@ const NotesSchema = new Schema({
         type: String,
         required: true
     },
+    payment:{
+        type: Number,
+        required: true
+    },
     name:{
         type: String,
         required: true

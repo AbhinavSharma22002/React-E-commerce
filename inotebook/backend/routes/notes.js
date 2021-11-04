@@ -24,10 +24,11 @@ router.post(
   async (req, res) => {
     try {
       const { image,name,category, price, note_id} = req.body;
-      const number = 1;
+      const number = 1,payment =price;
       const note = {
         image,
         name,
+        payment,
         number,
         note_id: note_id,
         category,
@@ -52,7 +53,6 @@ const {user,image,name,category,price,val} = req.body;
 
 //find the note to be updated
 let note = await Notes.find({note_id: req.params.id});
-
 let n=note[0].number;
 
 if(!note){
@@ -75,10 +75,14 @@ if(name){
     newNote.name = name;
 }
 
-if(val===1)
+if(val===1){
   newNote.number = n + 1;
-else
+  newNote.payment =  (note[0].number+1)*note[0].price;
+}
+else{
 newNote.number = n - 1;
+newNote.payment =  (note[0].number-1)*note[0].price;
+}
 
 if(category){
   newNote.category = category;

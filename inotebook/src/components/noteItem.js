@@ -1,14 +1,6 @@
-import { useEffect,useState } from "react";
 import { useHistory } from "react-router";
 const NoteItem = (props) => {
   let history = useHistory();
-  // const [p, setp] = useState({price:0});
-  // useEffect(() => {
-  //   props.setprice(p);
-  // }, [p]);
-  useEffect(() => {
-    props.setprice([].push(props.notes));
-  }, [])
 
   return (
     <>
@@ -20,7 +12,7 @@ const NoteItem = (props) => {
           <span className="card-text">
             <img src={`./images/${props.notes.image}`} alt={props.notes.category}></img>
             <span style={{float:'right',fontSize:'40px'}}>
-              <p style={{color:'#dc3545'}}>Price:</p>
+              <p style={{color:'#dc3545'}}>Price:{props.notes.number*props.notes.price}</p>
             </span>
           </span>
           <hr/>
