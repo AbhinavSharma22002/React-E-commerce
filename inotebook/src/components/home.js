@@ -26,7 +26,7 @@ const Home = (props) => {
 
   return (
     <div>
-      <div className="container">
+      <div className="container" style={{display:'flex', flexDirection:'row'}}>
         <Notes note={note} setnote={setnote1} showAlert={showAlert} UpdateNote={UpdateNote} deleteNote={deleteNote} FetchNotes={FetchNotes}/>
       </div>
     </div>

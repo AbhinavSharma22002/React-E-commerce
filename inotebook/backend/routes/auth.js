@@ -20,7 +20,7 @@ router.post(
     //If there are errors, return bad request
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
-      return res.status(400).json({ errors: errors.array() });
+      return res.status(400).json({ errors: errors.array()});
     }
 
     const { email, password, name } = req.body;
@@ -38,7 +38,7 @@ router.post(
       user = await User.create({
         name: name,
         password: hash,
-        email: email,
+        email: email
       });
 
       const data = {

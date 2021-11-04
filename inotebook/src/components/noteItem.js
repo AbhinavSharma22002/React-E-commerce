@@ -1,6 +1,15 @@
+import { useEffect,useState } from "react";
 import { useHistory } from "react-router";
 const NoteItem = (props) => {
   let history = useHistory();
+  // const [p, setp] = useState({price:0});
+  // useEffect(() => {
+  //   props.setprice(p);
+  // }, [p]);
+  useEffect(() => {
+    props.setprice([].push(props.notes));
+  }, [])
+
   return (
     <>
       <div className="card my-4" style={{background:'white', color:'#dc3545'}}>
@@ -11,16 +20,14 @@ const NoteItem = (props) => {
           <span className="card-text">
             <img src={`./images/${props.notes.image}`} alt={props.notes.category}></img>
             <span style={{float:'right',fontSize:'40px'}}>
-              <p style={{color:'#dc3545'}}>Price:{props.notes.price* props.notes.number}</p>
+              <p style={{color:'#dc3545'}}>Price:</p>
             </span>
           </span>
           <hr/>
           <div style={{backgroundColor:'#dc3545', color:'white'}} className="btn">
             <span className="btn" style={{borderRight:"1px solid white", borderRadius:'0px',color:'white'}} onClick={()=>{
                if(localStorage.getItem('token')){
-               
                 props.Up(props.notes,1,localStorage.getItem('token'));
-
                 let arr = props.y.filter(function(item) {
                   if(item._id===props.notes._id){
                     item.number = item.number +1;
