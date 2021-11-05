@@ -19,6 +19,7 @@ const Payment = () => {
                       <input
                         type="text"
                         size="40"
+                        style={{height:'50px'}}
                         className="form-control"
                         placeholder="Address"
                         id="address"
