@@ -39,16 +39,12 @@ const Login = (props) => {
   return (
     <>
       <div className="d-md-flex half">
-
         <div className="bg hello"></div>
-
         <div className="contents">
-
           <div className="container">
-            
             <div className="row align-items-center justify-content-center">
               <div className="col-md-12">
-                <div className="form-block mx-auto">
+                <div className="form-block mx-auto">             
                   <div className="text-center mb-5">
                     <h3>
                       Login to <strong>E-Commerce</strong>

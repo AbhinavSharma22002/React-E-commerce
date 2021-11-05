@@ -15,8 +15,8 @@ const Navbar = () => {
     <>
     <nav>
       <div className="left">
-        <Link to="/" style={{cursor:'pointer'}}>
-          <h1>E-Store</h1>
+        <Link to="/" style={{cursor:'pointer',textDecoration:'none'}}>
+          <h1 className="hy">E-Store</h1>
         </Link>
       </div>
 

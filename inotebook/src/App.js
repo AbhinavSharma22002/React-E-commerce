@@ -60,8 +60,9 @@ function App() {
     <NoteState>
     <Router>
     <Navbar/>
-
+    <div style={{height:'40px'}}>
     {alert===null?"": <Alert m={alert}/>}
+    </div>
 
     <div className="body" style={{padding:'4vmax'}}>
     <Switch>

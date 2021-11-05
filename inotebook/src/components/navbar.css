@@ -8,9 +8,10 @@ nav {
   justify-content: center;
   align-items: center;
 }
-.left > a {
+.left > a > .hy {
   text-decoration: none;
   color: #dc3545;
+  margin-top: 4px;
 }
 
 .mid {

@@ -12,6 +12,12 @@ const UserSchema = new Schema({
   address:{
     type: String
   },
+  number:{
+    type: String
+  },
+  pin:{
+    type: String
+  },
   email: {
     type: String,
     require: true,

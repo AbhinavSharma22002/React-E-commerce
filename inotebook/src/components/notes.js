@@ -10,25 +10,23 @@ const Notes = (props) => {
   };
 
   const handleClick = async (a)=>{
-    if(localStorage.getItem('token')){
-      const requestOptions = {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "auth-token": localStorage.getItem('token'),
-        }
-      };
-      const response = await fetch(
-        'http://localhost:5000/api/auth/getUser',
-        requestOptions
-      );
-      const data = await response.json();
-      console.log(data);
-    }
-    else{
-      props.showAlert("Please Log In!!","danger");
-      history.push('/login');
-    }
+    // if(localStorage.getItem('token')){
+    //   const requestOptions = {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-Type": "application/json",
+    //       "auth-token": localStorage.getItem('token'),
+    //     }
+    //   };
+    //   await fetch(
+    //     'http://localhost:5000/api/auth/getUser',
+    //     requestOptions
+    //   );
+    // }
+    // else{
+    //   props.showAlert("Please Log In!!","danger");
+    //   history.push('/login');
+    // }
 
 
    
@@ -74,13 +72,17 @@ const Notes = (props) => {
               <td>95%</td>
             </tr>
             <tr>
+              <td>Delivery Charge</td>
+              <td>10000</td>
+            </tr>
+            <tr>
               <td>Payable Amount</td>
-              <td>{price+(price*(95/100))}</td>
+              <td>{10000+price+(price*(95/100))}</td>
             </tr>
             <tr aria-colspan="2">
               <td>
               {/*eslint-disable-next-line*/}
-                <Link to="/payment" className="btn btn-danger" onClick={()=>{handleClick(price+(price*(95/100)))}}>Place Order!!</Link>
+                <Link to="/payment" className="btn btn-danger" onClick={()=>{handleClick(10000+price+(price*(95/100)))}}>Place Order!!</Link>
               </td>
             </tr>
             </tbody>
