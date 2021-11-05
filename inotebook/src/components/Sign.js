@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import  '../style.css';
 const Sign = (props) => {
     const history = useHistory();
-    const [otp,setotp] = useState(null);
+    // const [otp,setotp] = useState(null);
     const [name, setname] = useState("");
     const [password, setpassword] = useState("");
     const [email, setemail] = useState("");
@@ -18,9 +18,10 @@ const Sign = (props) => {
     const handleChange3 = (e)=>{
         setemail(e.target.value);
     }
-    const handleChange7 = (e)=>{
-      setotp(e.target.value);
-    }
+    
+    // const handleChange7 = (e)=>{
+    //   setotp(e.target.value);
+    // }
 
     const handleSubmit1 = async (e)=>{
       e.preventDefault();
@@ -60,10 +61,9 @@ const Sign = (props) => {
         <div className="row align-items-center justify-content-center">
           <div className="col-md-12">
             <div className="form-block mx-auto">
-              <div className="text-center mb-5">
+            <div className="text-center mb-5">
               <h3>Register to <strong>E-Commerce</strong></h3>
               </div>
-              {otp===null?(
               <form >
                 <div className="form-group first">
                   <label htmlFor="username">Username</label>
@@ -81,13 +81,7 @@ const Sign = (props) => {
                     <input type="submit" value="Sign Up" className="btn btn-block btn-danger" onClick={handleSubmit1}/>
                     <Link to="/login" className="mx-5 btn" style={{fontFamily:"serif",textDecorationLine:'none', color:"#dc3545"}}>Login</Link>
                     </div>
-              </form>):(
-              <form >
-                <div className="form-group first my-3">
-                  <label htmlFor="username"></label>
-                  <input type="text" className="form-control" value={otp} onChange={handleChange7}  placeholder="Enter the OTP send to your email" id="username"/>
-                </div>
-              </form>)}
+              </form>
             </div>
           </div>
         </div>

@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import Navbar from "./components/navbar";
 import Home from './components/home';
-import Sign from './components/Sign';
+// import Sign from './components/Sign';
 import About from './components/about';
 import NoteState from './context/notes/noteState';
 import Login from './components/Login';
@@ -76,7 +76,7 @@ function App() {
         {data===null?"":<Data showAlert={showAlert} data={data}/>}
       </Route>
       <Route exact path="/payment">
-        <Payment/>
+        <Payment showAlert={showAlert}/>
         </Route>
       <Route exact path="/shoes">
       {data===null?"":<Shoes showAlert={showAlert} data={data} />}
@@ -96,9 +96,6 @@ function App() {
       </Route>
       <Route exact path="/login">
     <Login showAlert={showAlert}/>
-      </Route>
-      <Route exact path="/signup">
-    <Sign showAlert={showAlert}/>
       </Route>
     </Switch>
     </div>

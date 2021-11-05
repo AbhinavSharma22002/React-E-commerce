@@ -3,6 +3,8 @@ const fetchuser = require("../middleware/Fetchuser");
 const router = express.Router();
 const Notes = require("../models/Notes");
 const Data = require("../models/Data");
+const Delivery = require("../models/Delivery");
+
 const { body, validationResult } = require("express-validator");
 
 //Route 1:  Get all the notes login require
@@ -24,7 +26,7 @@ router.post(
   async (req, res) => {
     try {
       const { image,name,category, price, note_id} = req.body;
-      const number = 1,payment =price;
+      const number = 1,payment = price;
       const note = {
         image,
         name,
@@ -123,5 +125,55 @@ catch(error){
     res.status(500).send('INTERNAL SERVER ERROR 1');
 }
 });
+
+
+/***************************************************************************/
+//Routes for accessing the orders
+
+//Routes for creating a order
+
+//Route 1:  Add a new order login require
+router.post(
+  "/addOrder",
+  fetchuser,
+  async (req, res) => {
+
+    try {
+      const { payment, notes_id, add, pin, number, CN,NC, expire} = req.body;
+       let array = [];
+      notes_id.map((item)=>{
+      array.push(item);
+      return item;
+    });
+      const order = {
+       user: req.user.id,
+       payment: payment,
+       address: add,
+       number: number,
+       pin: pin,
+       Card_number: CN,
+       Name_card: NC,
+       Expire: expire,
+       order: array
+      };
+      const savedNote = await Delivery.create(order);
+      // const notes = await Delivery.find({ user: req.user.id });
+      res.json(savedNote);
+
+    } catch (error) {
+        console.log(error.message);
+      res.status(500).send("INTERNAL SERVER ERROR");
+    }
+  }
+);
+
+//Route 2: Update an order
+
+
+
+
+
+
+
 
 module.exports = router;

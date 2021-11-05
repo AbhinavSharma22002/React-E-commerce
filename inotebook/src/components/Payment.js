@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router';
 
-const Payment = () => {
+const Payment = (props) => {
   const history = useHistory();
   const [card, setcard] = useState(false);
   const [add, setadd] = useState("");
@@ -56,7 +56,7 @@ const Payment = () => {
       );
     }
     else{
-      // props.showAlert("Please Log In!!","danger");
+      props.showAlert("Please Log In!!","danger");
       history.push('/login');
     }
     setcard(false);
@@ -88,6 +88,7 @@ const Payment = () => {
                       <input
                         type="text"
                         size="40"
+                        maxLength="16"
                         value={CN}
                         onChange={handleChange4}
                         className="form-control"
