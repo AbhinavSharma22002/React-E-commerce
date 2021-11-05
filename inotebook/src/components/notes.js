@@ -10,14 +10,15 @@ const Notes = (props) => {
   const [CN, setCN] = useState("");
   const [NC, setNC] = useState("");
   const [expire, setexpire] = useState("");
+  const [p, setp] = useState(0);
+  
+  let k=0;
 
   let price =0;
-
   const Left = (a)=>{
     price +=a;
   };
 
-  
   const handleChange1 = (e) => {
     setadd(e.target.value);
   };
@@ -56,15 +57,27 @@ const Notes = (props) => {
           "auth-token": localStorage.getItem('token'),
         },
         body: JSON.stringify({
-          payment: 10000+price+(price*(95/100)),
-          notes_id: notes_id
+          payment: 10000+(p+(p*(95/100))),
+          notes_id: notes_id,
+          add: add,
+          pin: pin,
+          number: number,
+          CN: CN,
+          NC: NC,
+          expire: expire
+
         })
       };
       await fetch(
         'http://localhost:5000/api/notes/addorder',
         requestOptions
       );
-      history.push('/payment');
+      props.note.map((item)=>{
+        props.UpdateNote(item,item.number,'ordered',localStorage.getItem('token'));
+      return item;
+      });
+
+      history.push('/');
     }
     else{
       props.showAlert("Please Log In!!","danger");
@@ -78,6 +91,7 @@ const Notes = (props) => {
   };
   const handleSubmit1 = (e)=>{
     e.preventDefault();
+    setp(price);
     setstep(2);
   };
 
@@ -91,6 +105,7 @@ const Notes = (props) => {
       <p style={{color:'#dc3545'}}>{props.note.length===0 && 'Cart is Empty!! Please Add!!'}</p>
       <div className="container row" style={{overflowX:'hidden',overflowY:'visible',scrollbarWidth:'none'}}>
         {props.note.map((notes) => {
+          if(notes.order==='cart'){
           Left(notes.payment);
           return (
             <NoteItem
@@ -103,7 +118,15 @@ const Notes = (props) => {
               setnote={props.setnote}
             />
           );
+          }
+          else{
+            k++;
+            return <></>;
+          }
         })}
+        {k>0?<>
+      <p style={{color:'#dc3545'}}>'Cart is Empty!! Please Add!!'</p>
+        </>:<></>}
       </div>
       </div>
       <div style={{width:'10%'}}></div>
@@ -112,7 +135,8 @@ const Notes = (props) => {
         <hr/>
         {props.note.length===0?<>
         <p style={{color:'#dc3545'}}>{props.note.length===0 && 'Cart is Empty!! Please Add!!'}</p>
-        </>:<> <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignContent:'center'}}>
+        </>:<> 
+        <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignContent:'center'}}>
           <table cellPadding="20px">
             <tbody>
             <tr>
@@ -139,6 +163,8 @@ const Notes = (props) => {
             </tbody>
           </table>
         </div>
+        
+        
         </>}
       </div>
     </>:step===2?<>

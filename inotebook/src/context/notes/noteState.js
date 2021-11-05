@@ -73,11 +73,12 @@ const NoteState = (props) => {
         name: item.name,
         category: item.category,
         val: 1,
+        order: 'cart',
         price: item.price
         }),
       };
        const response = await fetch(
-        `http://localhost:5000/api/notes/updatenotes/${item._id}`,
+        `http://localhost:5000/api/notes/updatenotes/${item.note_id}`,
         requestOptions
       );
       await response.json();
@@ -104,6 +105,7 @@ const NoteState = (props) => {
         image: item.image,
       name: item.name,
       category: item.category,
+        order: 'cart',
       val: a,
       price: item.price
       }),

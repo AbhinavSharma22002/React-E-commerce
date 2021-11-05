@@ -26,11 +26,12 @@ router.post(
   async (req, res) => {
     try {
       const { image,name,category, price, note_id} = req.body;
-      const number = 1,payment = price;
+      const number = 1,payment = price,order = 'cart';
       const note = {
         image,
         name,
         payment,
+        order,
         number,
         note_id: note_id,
         category,
@@ -51,11 +52,13 @@ router.post(
 
 //Route 3:  Update an existing note
 router.put('/updatenotes/:id',fetchuser, async (req,res)=>{
-const {user,image,name,category,price,val} = req.body;
+const {user,image,name,category,price,val,order} = req.body;
+console.log(order);
 
 //find the note to be updated
 let note = await Notes.find({note_id: req.params.id});
-let n=note[0].number;
+console.log(note);
+let n=note.number;
 
 if(!note){
    return res.status(404).send("NOT FOUND");
@@ -86,13 +89,14 @@ newNote.number = n - 1;
 newNote.payment =  (note[0].number-1)*note[0].price;
 }
 
+  newNote.order = order;
+
 if(category){
   newNote.category = category;
 }
 if(price){
   newNote.price = price;
 }
-
 note = await Notes.findByIdAndUpdate(note[0]._id,{$set: newNote},{new:true});
 res.json({note});
 

@@ -21,6 +21,10 @@ const NotesSchema = new Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref:'datas'
     },
+    order:{
+        type: String,
+        required: true
+    },
     number:{
         type: Number,
         required: true

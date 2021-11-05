@@ -4,33 +4,40 @@ const OrderSchema = new Schema({
     user:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'users',
-        unique: true
+        required: true
     },
     payment:{
         type: Number,
         required: true
     },
     address:{
-      type: String
+      type: String,
+      required: true
     },
     number:{
-      type: String
+      type: String,
+      required: true
     },
     pin:{
-      type: String
+      type: String,
+      required: true
     },
     Card_number:{
-      type: String
+      type: String,
+      required: true
     },
     Name_card:{
-      type: String
+      type: String,
+      required: true
     },
     Expire:{
-      type: String
+      type: String,
+      required: true
     },
     order:[{
         type: mongoose.Schema.Types.ObjectId,
-        ref:'notes'
+        ref:'notes',
+        required: true
     }], 
 });
 
