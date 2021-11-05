@@ -10,6 +10,8 @@ const Notes = (props) => {
   };
 
   const handleClick = async (a)=>{
+    //CART values 
+
     // if(localStorage.getItem('token')){
     //   const requestOptions = {
     //     method: "POST",

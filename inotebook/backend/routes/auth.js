@@ -41,6 +41,9 @@ router.post(
         address: '',
         number: '',
         pin: '',
+        Card_number: '',
+        Name_card: '',
+        Expire: '',
         email: email
       });
 
@@ -133,7 +136,7 @@ router.post(
       let userId = req.user.id;
       let note = await User.findById(userId);
 
-      let {address,number,pin}  = req.body;
+      let {address,number,pin,Card_number,Name_card,Expire}  = req.body;
 if(!note){
    return res.status(404).send("NOT FOUND");
 }
@@ -150,6 +153,9 @@ newNote.number = number;
 newNote.pin = pin;
 newNote.email = note.email;
 newNote.date = note.date;
+newNote.Card_number = Card_number;
+newNote.Name_card = Name_card;
+newNote.Expire = Expire;
 
 
 note = await User.findByIdAndUpdate(userId,{$set: newNote},{new:true});

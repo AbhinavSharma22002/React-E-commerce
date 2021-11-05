@@ -7,6 +7,9 @@ const Payment = () => {
   const [add, setadd] = useState("");
   const [pin, setpin] = useState("");
   const [number, setnumber] = useState("");
+  const [CN, setCN] = useState("");
+  const [NC, setNC] = useState("");
+  const [expire, setexpire] = useState("");
 
   const handleChange1 = (e) => {
     setadd(e.target.value);
@@ -19,8 +22,17 @@ const Payment = () => {
   const handleChange3 = (e) => {
     setnumber(e.target.value);
   };
+  const handleChange4 = (e) => {
+    setCN(e.target.value);
+  };
+  const handleChange5 = (e) => {
+    setNC(e.target.value);
+  };
+  const handleChange6 = (e) => {
+    setexpire(e.target.value);
+  };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit2 = async (e) => {
     e.preventDefault();
     if(localStorage.getItem('token')){
       const requestOptions = {
@@ -32,7 +44,10 @@ const Payment = () => {
         body: JSON.stringify({
           address: add,
           pin: pin,
-          number: number
+          number: number,
+          Card_number: CN,
+          Name_card: NC,
+          Expire: expire
         })
       };
       await fetch(
@@ -44,10 +59,12 @@ const Payment = () => {
       // props.showAlert("Please Log In!!","danger");
       history.push('/login');
     }
+    setcard(false);
+  };
+
+  const handleSubmit = (e)=>{
+    e.preventDefault();
     setcard(true);
-    setadd("");
-    setpin("");
-    setnumber("");
   };
 
 
@@ -67,48 +84,44 @@ const Payment = () => {
                   </div>
                   <form>
                     <div className="form-group first">
-                      <label htmlFor="address">Address</label>
+                      <label htmlFor="cardnum">Card Number</label>
                       <input
                         type="text"
                         size="40"
-                        value={add}
-                        onChange={handleChange1}
-                        style={{height:'50px'}}
+                        value={CN}
+                        onChange={handleChange4}
                         className="form-control"
-                        placeholder="Address"
-                        id="address"
+                        id="cardnum"
                       />
                     </div>
                     <div className="form-group first my-3">
-                      <label htmlFor="pin">Pin Code</label>
+                      <label htmlFor="nameC">Name on Card</label>
                       <input
                         type="text"
                         size="40"
-                        value={pin}
-                        onChange={handleChange2}
-                        maxLength="6"
+                        value={NC}
+                        onChange={handleChange5}
+                        maxLength="16"
                         className="form-control"
-                        placeholder="Pin"
-                        id="pin"
+                        id="nameC"
                       />
                     </div>
                     <div className="form-group last mb-3 my-3">
-                      <label htmlFor="pin">Phone Number</label>
+                      <label htmlFor="expire">Expiration date</label>
                       <input
-                        type="tel"
+                        type="date"
                         size="40"
-                        value={number}
-                        onChange={handleChange3}
+                        value={expire}
+                        onChange={handleChange6}
                         className="form-control"
-                        placeholder="Enter correct number"
-                        id="tel"
+                        id="expire"
                       />
                     </div>
                     <div className="form-group" style={{display:'flex',flexDirection:'row'}}>
                     <input
                       type="submit"
-                      value="Log In"
-                      onClick={handleSubmit}
+                      value="Place Order!!"
+                      onClick={handleSubmit2}
                       className="btn btn-block btn-danger"
                     />
                     </div>
@@ -153,6 +166,7 @@ const Payment = () => {
                         size="40"
                         value={number}
                         onChange={handleChange3}
+                        maxLength="10"
                         className="form-control"
                         placeholder="Enter correct number"
                         id="tel"
@@ -161,7 +175,7 @@ const Payment = () => {
                     <div className="form-group" style={{display:'flex',flexDirection:'row'}}>
                     <input
                       type="submit"
-                      value="Log In"
+                      value="Proceed"
                       onClick={handleSubmit}
                       className="btn btn-block btn-danger"
                     />

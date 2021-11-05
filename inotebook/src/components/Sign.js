@@ -40,6 +40,9 @@ const Sign = (props) => {
             props.showAlert("Invalid Credentials!!","danger");
         }
         setotp(null);
+        setname("");
+        setpassword("");
+        setemail("");
   }
   // eslint-disable-next-line
     const handleSubmit = async (e)=>{

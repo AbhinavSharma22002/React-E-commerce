@@ -18,6 +18,15 @@ const UserSchema = new Schema({
   pin:{
     type: String
   },
+  Card_number:{
+    type: String
+  },
+  Name_card:{
+    type: String
+  },
+  Expire:{
+    type: String
+  },
   email: {
     type: String,
     require: true,
