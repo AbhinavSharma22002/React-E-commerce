@@ -93,7 +93,7 @@ const NoteState = (props) => {
 
   };
 
-  const UpdateNote = async(item,a,c) =>{
+  const UpdateNote = async(item,a,b,c) =>{
     const requestOptions = {
       method: "PUT",
       headers: {
@@ -105,7 +105,7 @@ const NoteState = (props) => {
         image: item.image,
       name: item.name,
       category: item.category,
-        order: 'cart',
+      order: b,
       val: a,
       price: item.price
       }),

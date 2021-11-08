@@ -53,12 +53,9 @@ router.post(
 //Route 3:  Update an existing note
 router.put('/updatenotes/:id',fetchuser, async (req,res)=>{
 const {user,image,name,category,price,val,order} = req.body;
-console.log(order);
 
 //find the note to be updated
 let note = await Notes.find({note_id: req.params.id});
-console.log(note);
-let n=note.number;
 
 if(!note){
    return res.status(404).send("NOT FOUND");
@@ -81,11 +78,11 @@ if(name){
 }
 
 if(val===1){
-  newNote.number = n + 1;
+  newNote.number = note[0].number + 1;
   newNote.payment =  (note[0].number+1)*note[0].price;
 }
 else{
-newNote.number = n - 1;
+newNote.number = note[0].number - 1;
 newNote.payment =  (note[0].number-1)*note[0].price;
 }
 
@@ -99,7 +96,6 @@ if(price){
 }
 note = await Notes.findByIdAndUpdate(note[0]._id,{$set: newNote},{new:true});
 res.json({note});
-
 });
 
 //Route 4:  Delete a note
@@ -144,7 +140,7 @@ router.post(
 
     try {
       const { payment, notes_id, add, pin, number, CN,NC, expire} = req.body;
-       let array = [];
+      let array = [];
       notes_id.map((item)=>{
       array.push(item);
       return item;

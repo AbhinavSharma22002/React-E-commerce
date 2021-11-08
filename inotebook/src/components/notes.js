@@ -12,7 +12,6 @@ const Notes = (props) => {
   const [expire, setexpire] = useState("");
   const [p, setp] = useState(0);
   
-  let k=0;
 
   let price =0;
   const Left = (a)=>{
@@ -46,8 +45,14 @@ const Notes = (props) => {
     //Create a new order
     if(localStorage.getItem('token')){
       let notes_id = [];
+
       props.note.map((item)=>{
-        notes_id.push(item._id);
+        let ob = {};
+        ob.id = item.note_id;
+        ob.number = item.number;
+        notes_id.push(ob);
+        props.deleteNote(props.setnote, item._id,props.showAlert,localStorage.getItem('token'));
+          props.setnote([]); 
       return item;
     });
       const requestOptions = {
@@ -72,10 +77,7 @@ const Notes = (props) => {
         'http://localhost:5000/api/notes/addorder',
         requestOptions
       );
-      props.note.map((item)=>{
-        props.UpdateNote(item,item.number,'ordered',localStorage.getItem('token'));
-      return item;
-      });
+      
 
       history.push('/');
     }
@@ -105,7 +107,6 @@ const Notes = (props) => {
       <p style={{color:'#dc3545'}}>{props.note.length===0 && 'Cart is Empty!! Please Add!!'}</p>
       <div className="container row" style={{overflowX:'hidden',overflowY:'visible',scrollbarWidth:'none'}}>
         {props.note.map((notes) => {
-          if(notes.order==='cart'){
           Left(notes.payment);
           return (
             <NoteItem
@@ -118,15 +119,7 @@ const Notes = (props) => {
               setnote={props.setnote}
             />
           );
-          }
-          else{
-            k++;
-            return <></>;
-          }
         })}
-        {k>0?<>
-      <p style={{color:'#dc3545'}}>'Cart is Empty!! Please Add!!'</p>
-        </>:<></>}
       </div>
       </div>
       <div style={{width:'10%'}}></div>
@@ -157,7 +150,9 @@ const Notes = (props) => {
             </tr>
             <tr aria-colspan="2">
               <td>
+                
                 <button className="btn btn-danger" onClick={handleSubmit1}>Place Order!!</button>
+
               </td>
             </tr>
             </tbody>

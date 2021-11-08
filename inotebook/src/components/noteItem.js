@@ -48,7 +48,6 @@ const NoteItem = (props) => {
                     return item;
                 });
                   props.setnote(arr); 
-
                  }
                  else{
                   props.Del(props.setnote, props.notes._id,props.showAlert,localStorage.getItem('token'));
