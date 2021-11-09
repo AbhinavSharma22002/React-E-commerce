@@ -18,8 +18,6 @@ const NoteItem = (props) => {
           <div style={{backgroundColor:'#dc3545', color:'white'}} className="btn">
             <span className="btn" style={{borderRight:"1px solid white", borderRadius:'0px',color:'white'}} onClick={()=>{
                if(localStorage.getItem('token')){
-                //  if(props.notes.order===0)
-
                 props.Up(props.notes,1,'cart',localStorage.getItem('token'));
                 let arr = props.y.filter(function(item) {
                   if(item._id===props.notes._id){

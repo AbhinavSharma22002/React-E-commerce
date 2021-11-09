@@ -127,7 +127,7 @@ const Notes = (props) => {
         <h1 className="text-center">Place Order</h1>
         <hr/>
         {props.note.length===0?<>
-        <p style={{color:'#dc3545'}}>{props.note.length===0 && 'Cart is Empty!! Please Add!!'}</p>
+        <p style={{color:'#dc3545'}}>{props.note.length===0 && ''}</p>
         </>:<> 
         <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignContent:'center'}}>
           <table cellPadding="20px">
