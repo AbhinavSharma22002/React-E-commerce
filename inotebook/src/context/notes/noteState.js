@@ -134,6 +134,8 @@ const NoteState = (props) => {
     if(response.status===200){
       if(e==='F')
       c("Deleted","success");
+      else
+      c("Order Placed!!","success");
     }else{
       c("Error","danger");
     }
