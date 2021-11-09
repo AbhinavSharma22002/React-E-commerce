@@ -48,7 +48,7 @@ const NoteItem = (props) => {
                   props.setnote(arr); 
                  }
                  else{
-                  props.Del(props.setnote, props.notes._id,props.showAlert,localStorage.getItem('token'));
+                  props.Del(props.setnote,'F', props.notes._id,props.showAlert,localStorage.getItem('token'));
 
                   let arr = props.y.filter(function(item) {
                     return item._id !== props.notes._id;
@@ -68,7 +68,7 @@ const NoteItem = (props) => {
               style={{ cursor: "pointer"}}
               onClick={() => {
                 if(localStorage.getItem('token')){
-                  props.Del(props.setnote, props.notes._id,props.showAlert,localStorage.getItem('token'));
+                  props.Del(props.setnote,'F', props.notes._id,props.showAlert,localStorage.getItem('token'));
                   let arr = props.y.filter(function(item) {
                     return item._id !== props.notes._id;
                 })

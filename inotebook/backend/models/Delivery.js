@@ -35,7 +35,6 @@ const OrderSchema = new Schema({
     },
     order:[{
         id:{type: mongoose.Schema.Types.ObjectId,
-        ref:'notes',
         required: true
         },
         number:{

@@ -117,7 +117,7 @@ const NoteState = (props) => {
   };
 
 
-  const deleteNote = async(a,b,c,d) => {
+  const deleteNote = async(a,e,b,c,d) => {
     const requestOptions = {
       method: "DELETE",
       headers: {
@@ -132,6 +132,7 @@ const NoteState = (props) => {
     // eslint-disable-next-line
     // const data = await response.json();
     if(response.status===200){
+      if(e==='F')
       c("Deleted","success");
     }else{
       c("Error","danger");

@@ -51,7 +51,7 @@ const Notes = (props) => {
         ob.id = item.note_id;
         ob.number = item.number;
         notes_id.push(ob);
-        props.deleteNote(props.setnote, item._id,props.showAlert,localStorage.getItem('token'));
+        props.deleteNote(props.setnote,'c', item._id,props.showAlert,localStorage.getItem('token'));
           props.setnote([]); 
       return item;
     });
