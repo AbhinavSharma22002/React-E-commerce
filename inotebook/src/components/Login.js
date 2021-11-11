@@ -48,7 +48,6 @@ const Login = (props) => {
     } else {
       props.showAlert("Invalid credentials", "danger");
     }
-
     setemail("");
     setpassword("");
   };

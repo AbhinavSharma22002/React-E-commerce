@@ -41,7 +41,6 @@ router.post(
       const savedNote = await Notes.create(note);
       const notes = await Notes.find({ user: req.user.id });
       res.json(savedNote);
-
     } catch (error) {
         console.log(error.message);
       res.status(500).send("INTERNAL SERVER ERROR");
@@ -53,9 +52,8 @@ router.post(
 //Route 3:  Update an existing note
 router.put('/updatenotes/:id',fetchuser, async (req,res)=>{
 const {user,image,name,category,price,val,order} = req.body;
-
 //find the note to be updated
-let note = await Notes.find({note_id: req.params.id});
+let note = await Notes.find({_id: req.params.id});
 
 if(!note){
    return res.status(404).send("NOT FOUND");
@@ -166,14 +164,6 @@ router.post(
     }
   }
 );
-
-//Route 2: Update an order
-
-
-
-
-
-
 
 
 module.exports = router;

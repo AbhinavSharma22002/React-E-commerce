@@ -11,8 +11,6 @@ const Notes = (props) => {
   const [NC, setNC] = useState("");
   const [expire, setexpire] = useState("");
   const [p, setp] = useState(0);
-  
-
   let price =0;
   const Left = (a)=>{
     price +=a;

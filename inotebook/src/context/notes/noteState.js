@@ -20,18 +20,17 @@ const NoteState = (props) => {
 
   function filterArrayElementByEdit(array,b) {
     for(let i=0;i<array.length;i++){
-      if(array[i].name===b){
-        return false;
+      if(array[i].note_id===b._id){
+        return array[i];
       }
     }
     return true;
   }
   
   const AddNote = async(item,b,c) => {
-
     let arr = await FetchNotes(c,b);
-
-    if(filterArrayElementByEdit(arr,item.name)){
+    let text = filterArrayElementByEdit(arr,item);
+    if(text===true){
     const requestOptions = {
       method: "POST",
       headers: {
@@ -78,7 +77,7 @@ const NoteState = (props) => {
         }),
       };
        const response = await fetch(
-        `http://localhost:5000/api/notes/updatenotes/${item.note_id}`,
+        `http://localhost:5000/api/notes/updatenotes/${text._id}`,
         requestOptions
       );
       await response.json();
