@@ -20,6 +20,7 @@ import Footer from './components/Footer';
 import Shoes from './components/Shoes';
 import Product from './components/Product';
 import Payment from './components/Payment';
+import Order from './components/Order';
 
 
 function App() { 
@@ -81,6 +82,9 @@ function App() {
       <Route exact path="/shoes">
       {data===null?"":<Shoes showAlert={showAlert} data={data} />}
       </Route>      
+      <Route exact path="/Order">
+        <Order/>
+      </Route>     
       <Route exact path="/shirt">
       {data===null?"":<Shirt showAlert={showAlert} data={data} />}
       </Route>      

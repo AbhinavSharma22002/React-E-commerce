@@ -13,65 +13,82 @@ const Navbar = () => {
 
   return (
     <>
-    <nav>
-      <div className="left">
-        <Link to="/" style={{cursor:'pointer',textDecoration:'none'}}>
-          <h1 className="hy">E-Store</h1>
-        </Link>
-      </div>
+      <nav>
+        <div className="left">
+          <Link to="/" style={{ cursor: "pointer", textDecoration: "none" }}>
+            <h1 className="hy">E-Store</h1>
+          </Link>
+        </div>
 
-           <div className="mid">
-            <Link
-              className={`${location.pathname === "/" ? "active" : ""}`}
-              to="/"
-            >
-              Home
-            </Link>
-            <Link
-              className={`${location.pathname === "/product" ? "active" : ""}`}
-              to="/product"
-            >
-              Products
-            </Link>
-            <Link
-              className={`${location.pathname === "/About" ? "active" : ""}`}
-              to="/About"
-            >
-              About
-            </Link>
-            {localStorage.getItem("token")?(<></>):(<Link
-              className={`${location.pathname === "/login" ? "active" : ""}`}
-              to="/login"
-            >
-              Login
-            </Link>)}
+        <div className="mid">
+          <Link
+            className={`${location.pathname === "/" ? "active" : ""}`}
+            to="/"
+          >
+            Home
+          </Link>
+          <Link
+            className={`${location.pathname === "/product" ? "active" : ""}`}
+            to="/product"
+          >
+            Products
+          </Link>
+          <Link
+            className={`${location.pathname === "/About" ? "active" : ""}`}
+            to="/About"
+          >
+            About
+          </Link>
+          {localStorage.getItem("token") ? (
+            <>  
             <Link
               className={`${location.pathname === "/cart" ? "active" : ""}`}
               to="/cart"
             >
               Cart
-            </Link>
-            </div>
-
-            
-          <div className="right">
-        {localStorage.getItem("token") ? (
-          <>
-          {/* eslint-disable-next-line*/}
-        <a
-              onClick={handleLogout}
-              style={{ cursor: "pointer" }}
+            </Link> {/*eslint-disable-next-line */}
+            <a>
+              <div class="dropdown">
+                {/*eslint-disable-next-line */}
+                <a
+                style={{textDecoration:'none',color:'black'}}
+                  class="dropdown-toggle"
+                  type="button"
+                  id="dropdownMenuButton1"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >My Account
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li>
+                {/*eslint-disable-next-line */}
+                    <a
+                      className="dropdown-item"
+                      onClick={handleLogout}
+                      style={{ cursor: "pointer" }}
+                    >
+                      <img src="./3343.png" alt="logout" height="40px" />
+                      Logout
+                    </a>
+                  </li>
+                  <li>
+                    <Link to="/Order" class="dropdown-item">My Orders</Link>
+                  </li>
+                </ul>
+              </div>
+            </a></>
+          ) : (
+            <Link
+              className={`${location.pathname === "/login" ? "active" : ""}`}
+              to="/login"
             >
-              <img src="./3343.png" alt="logout" height="40px"/>
-              Logout
-            </a>
-      </>
-        ) : (
-          <>
-        </>
-        )}
-      </div>
-    </nav>
+              Login
+            </Link>
+          )}
+           
+        </div>
+        <div className="right"></div>
+      </nav>
     </>
   );
 };
