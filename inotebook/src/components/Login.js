@@ -39,7 +39,6 @@ const Login = (props) => {
       },
       body: JSON.stringify({ email: email, password: password }),
     });
-
     const json = await response.json();
     if (response.status === 200) {
       localStorage.setItem("token", json.authData);
