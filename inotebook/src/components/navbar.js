@@ -48,18 +48,18 @@ const Navbar = () => {
               Cart
             </Link> {/*eslint-disable-next-line */}
             <a>
-              <div class="dropdown">
+              <div className="dropdown">
                 {/*eslint-disable-next-line */}
                 <a
                 style={{textDecoration:'none',color:'black'}}
-                  class="dropdown-toggle"
+                  className="dropdown-toggle"
                   type="button"
                   id="dropdownMenuButton1"
                   data-bs-toggle="dropdown"
                   aria-expanded="false"
                 >My Account
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                <ul className="dropdown-menu" aria-labelledby="dropdownMenuButton1">
                   <li>
                 {/*eslint-disable-next-line */}
                     <a
@@ -72,11 +72,12 @@ const Navbar = () => {
                     </a>
                   </li>
                   <li>
-                    <Link to="/Order" class="dropdown-item">My Orders</Link>
+                    <Link to="/Order" className="dropdown-item">My Orders</Link>
                   </li>
                 </ul>
               </div>
-            </a></>
+            </a>
+            </>
           ) : (
             <Link
               className={`${location.pathname === "/login" ? "active" : ""}`}

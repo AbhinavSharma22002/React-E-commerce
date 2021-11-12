@@ -110,7 +110,7 @@ const NoteState = (props) => {
       }),
     };
      await fetch(
-      `http://localhost:5000/api/notes/updatenotes/${item.note_id}`,
+      `http://localhost:5000/api/notes/updatenotes/${item._id}`,
       requestOptions
     );
   };
