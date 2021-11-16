@@ -109,9 +109,24 @@ catch(error){
     res.status(500).send('INTERNAL SERVER ERROR 1');
 }
 });
+
+router.get('/Data1/:id', async (req,res)=>{
+  try{
+  let note = await Data.findById(req.params.id);
+  if(!note){
+      return res.status(404).send("NOT FOUND");
+   }
+   res.json(note);
+  }
+  catch(error){
+    console.log(error.message);
+    res.status(500).send("INTERNAL SERVER ERROR 1");
+  }
+});
+
 /***************************************************************************/
 //Routes for accessing the orders
-//Routes for creating a order
+
 //Route 1:  Add a new order login require
 router.post(
   "/addOrder",
@@ -146,4 +161,21 @@ router.post(
     }
   }
 );
+
+
+//Route 2:  To return the orders placed by a specific user
+router.get(
+  "/checkOrder",
+  fetchuser,
+  async (req, res) => {
+    try {
+      const notes = await Delivery.find({ user: req.user.id });
+      res.json(notes);
+    } catch (error) {
+        console.log(error.message);
+      res.status(500).send("INTERNAL SERVER ERROR");
+    }
+  }
+);
+
 module.exports = router;

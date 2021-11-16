@@ -83,7 +83,7 @@ function App() {
       {data===null?"":<Shoes showAlert={showAlert} data={data} />}
       </Route>      
       <Route exact path="/Order">
-        <Order/>
+        <Order showAlert={showAlert}/>
       </Route>     
       <Route exact path="/shirt">
       {data===null?"":<Shirt showAlert={showAlert} data={data} />}

@@ -67,7 +67,7 @@ const Navbar = () => {
                       onClick={handleLogout}
                       style={{ cursor: "pointer" }}
                     >
-                      <img src="./3343.png" alt="logout" height="40px" />
+                      <img src="./3343.png" alt="logout" height="20px" />
                       Logout
                     </a>
                   </li>
