@@ -31,15 +31,16 @@ const [data, setdata] = useState([]);
 
     return (
         <div className="container">
-        {data.map((order)=>{
-          
+          {data.length===0?<>No Orders For now!!</>:<>
+            {data.map((order)=>{
          return( order.order.map((item)=>{
             return (
-              <Card3 order={item} showAlert={props.showAlert}>
+              <Card3 order={item} showAlert={props.showAlert} key={item._id}>
               </Card3>);
           })
          );
         })}
+          </>}
         </div>
     )
 }
