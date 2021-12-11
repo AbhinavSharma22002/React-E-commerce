@@ -10,7 +10,7 @@ const Payment = (props) => {
   const [CN, setCN] = useState("");
   const [NC, setNC] = useState("");
   const [expire, setexpire] = useState("");
-
+  const [hell, sethell] = useState("");
   const handleChange1 = (e) => {
     setadd(e.target.value);
   };
@@ -24,6 +24,20 @@ const Payment = (props) => {
   };
   const handleChange4 = (e) => {
     setCN(e.target.value);
+    let val = validateCardNo(CN);
+    console.log(val);
+    if(val==="American Express"){
+      sethell("./am7.png");
+    }
+    else if(val==="Visa"){
+      sethell("./vs2.jfif");
+    }
+    else if(val==="Master"){
+      sethell("./ms1.jfif");
+    }
+    else{
+      sethell("");
+    }
   };
   const handleChange5 = (e) => {
     setNC(e.target.value);
@@ -31,6 +45,39 @@ const Payment = (props) => {
   const handleChange6 = (e) => {
     setexpire(e.target.value);
   };
+  const checkLuhn = (cardNo)=> {
+    var s = 0;
+    var doubleDigit = false;
+    for (var i = cardNo.length - 1; i >= 0; i--) {
+        var digit = +cardNo[i];
+        if (doubleDigit) {
+            digit *= 2;
+            if (digit > 9)
+                digit -= 9;
+        }
+        s += digit;
+        doubleDigit = !doubleDigit;
+    }
+    return s % 10 === 0;
+};
+
+const validateCardNo = (no)=> {
+  if(no && checkLuhn(no) && no.length===16){
+    if((no.length === 15) && (no.indexOf("34") === 0 || no.indexOf("37") === 0)){  //american express
+      return "American Express";
+    }
+    else if(no.length === 13 && no[0] === 4){ //visa
+      return "Visa";
+    }
+    else if(no.indexOf("51")===0 || no.indexOf("52")===0 ||no.indexOf("53")===0 ||no.indexOf("54")===0 ||no.indexOf("55")===0){
+      return "Master";
+    }
+    else{
+      return false;
+    }
+  }
+  return false;
+};
 
   const handleSubmit2 = async (e) => {
     e.preventDefault();
@@ -67,8 +114,6 @@ const Payment = (props) => {
     setcard(true);
   };
 
-
-
     return (
         <div className="d-flex justify-content-center half">
         <div>
@@ -94,6 +139,7 @@ const Payment = (props) => {
                         className="form-control"
                         id="cardnum"
                       />
+                      <img src={hell} alt="/"/>
                     </div>
                     <div className="form-group first my-3">
                       <label htmlFor="nameC">Name on Card</label>

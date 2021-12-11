@@ -8,6 +8,9 @@ const jwt = require("jsonwebtoken");
 const JWT_secret = "abhinavisagood$body";
 const fetchUser = require("../middleware/Fetchuser");
 
+
+router.use(express.json());
+router.use(express.urlencoded({extended: false}));
 // Route 1:  Create a user using : Post "api/auth/createUser". Doesn't require Auth
 router.post(
   "/createUser",
@@ -120,5 +123,6 @@ router.post(
     }
   }
 );
+
 
 module.exports = router;
