@@ -25,7 +25,7 @@ const Card3 = (props) => {
         <>
      <div>
       <div className="card my-3">
-        <h5 className="card-header">{data.category}</h5>
+        <h5 className="card-header">Ref Id: {data._id}</h5>
         <div className="card-body">
           <h5 className="card-title"style={{fontSize:'4vmax'}}>{data.name}</h5>
           <p className="card-text">
