@@ -33,7 +33,7 @@ const Product = () => {
                 <img src="./images/img5.jfif" alt="" height="350px" width="90%"/>
             </div>
             <div className="contentBx">
-                <h2>Shoes</h2>
+                <h2>Fashions</h2>
             <Link to="/product" className="hello" style={{textDecoration:'none'}}>
                 Check Products out!!
             </Link>
@@ -41,13 +41,14 @@ const Product = () => {
             </div>
         </div>
 
+
         <div className="container1">
             <div className="card">
             <div className="imgBx">
-                <img src="./images/img31.jfif" alt="" height="350px" width="90%"/>
+                <img src="./bakery.jpg" alt="" height="350px" width="90%"/>
             </div>
             <div className="contentBx">
-                <h2>Watches</h2>
+                <h2>Bakery</h2>
             <Link to="/product" className="hello"  style={{textDecoration:'none'}}>
                 Check Products out!!
           </Link>
@@ -60,26 +61,10 @@ const Product = () => {
         <div className="container1">
             <div className="card">
             <div className="imgBx">
-                <img src="./images/img21.jfif" alt="" height="350px" width="90%"/>
+            <img src="./grocery1.jpg" height="350px" width="90%" alt="Ist product" />
             </div>
             <div className="contentBx">
-                <h2>Jeans</h2>
-            <Link to="/product" className="hello"  style={{textDecoration:'none'}}>
-                Check Products out!!
-          </Link>
-            </div>
-            </div>
-        </div>
-
-
-
-        <div className="container1">
-            <div className="card">
-            <div className="imgBx">
-            <img src="./images/img11.jfif" height="350px" width="90%" alt="Ist product" />
-            </div>
-            <div className="contentBx">
-                <h2>Shirts</h2>
+                <h2>Grocery</h2>
             <Link to="/product" className="hello" style={{textDecoration:'none'}}>
                 Check Products out!!
           </Link>

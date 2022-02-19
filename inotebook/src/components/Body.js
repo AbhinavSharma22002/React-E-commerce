@@ -3,9 +3,7 @@ import Card2 from "./Card2";
 
 const Body = (props) => {
   return (
-    <div style={{display:'flex',flexFlow:'wrap', justifyContent:'center'}}>
-         <Card2/>
-    </div>
+         <Card2 title={props.title} link={props.link} image={props.image}/>
   );
 };
 

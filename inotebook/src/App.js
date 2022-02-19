@@ -98,7 +98,7 @@ function App() {
       {data===null?"":<Jeans showAlert={showAlert} data={data} />  /*for jeans*/}
       </Route>
       <Route exact path="/matics">
-        {data===null?"":<Matics showAlert={showAlert} data={data}/>/*for cosmatic */}
+        {data===null?"":<Matrics showAlert={showAlert} data={data}/>/*for cosmatic */}
       </Route>
       <Route exact path="/grocery">
         {data===null?"":<Grocery showAlert={showAlert} data={data}/>/*for grocery*/}
