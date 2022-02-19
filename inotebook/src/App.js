@@ -21,6 +21,9 @@ import Shoes from './components/Shoes';
 import Product from './components/Product';
 import Payment from './components/Payment';
 import Order from './components/Order';
+import Bakery from './components/Bakery';
+import Grocery from './components/Grocery';
+import Matrics from './components/Matrics';
 
 
 function App() { 
@@ -80,21 +83,29 @@ function App() {
         <Payment showAlert={showAlert}/>
         </Route>
       <Route exact path="/shoes">
-      {data===null?"":<Shoes showAlert={showAlert} data={data} />}
+      {data===null?"":<Shoes showAlert={showAlert} data={data} />/*for shoes*/}
       </Route>      
       <Route exact path="/Order">
         <Order showAlert={showAlert}/>
       </Route>     
       <Route exact path="/shirt">
-      {data===null?"":<Shirt showAlert={showAlert} data={data} />}
+      {data===null?"":<Shirt showAlert={showAlert} data={data} /> /*for shirt*/}
       </Route>      
       <Route exact path="/watch">
-      {data===null?"":<Watch showAlert={showAlert} data={data} />}
+      {data===null?"":<Watch showAlert={showAlert} data={data} /> /*for watch*/}
       </Route>      
       <Route exact path="/jeans">
-      {data===null?"":<Jeans showAlert={showAlert} data={data} />}
+      {data===null?"":<Jeans showAlert={showAlert} data={data} />  /*for jeans*/}
       </Route>
-
+      <Route exact path="/matics">
+        {data===null?"":<Matics showAlert={showAlert} data={data}/>/*for cosmatic */}
+      </Route>
+      <Route exact path="/grocery">
+        {data===null?"":<Grocery showAlert={showAlert} data={data}/>/*for grocery*/}
+      </Route>
+      <Route exact path="/bakery">
+        {data===null?"":<Bakery showAlert={showAlert} data={data}/>/*for bakery*/}
+      </Route>
       <Route exact path="/About">
     <About/>
       </Route>
