@@ -25,7 +25,6 @@ const Payment = (props) => {
   const handleChange4 = (e) => {
     setCN(e.target.value);
     let val = validateCardNo(CN);
-    console.log(val);
     if(val==="American Express"){
       sethell("./am7.png");
     }
