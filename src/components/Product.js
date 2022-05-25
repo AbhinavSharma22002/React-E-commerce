@@ -7,7 +7,7 @@ const Product = () => {
         <div>
             
     <section className="home">
-      <div className="container1" id="leftContainer">
+      <div className="container" id="leftContainer">
         <h1>Live Your Life In</h1>
         <h2>A New Style!</h2>
         <p>
@@ -19,7 +19,7 @@ const Product = () => {
         </Link>
 
       </div>
-      <div className="container1" id="rightContainer">
+      <div className="container45" id="rightContainer">
         <img src="./home.png" alt="" />
       </div>
     </section>

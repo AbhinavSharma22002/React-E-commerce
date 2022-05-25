@@ -1,26 +1,13 @@
 nav {
   height: 5vmax;
-  display: flex;
 }
-.left {
-  width: 20%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.left > a > .hy {
+.hy {
   text-decoration: none;
   color: #dc3545;
-  margin-top: 4px;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
-.mid {
-  width: 80%;
-  display: flex;
-  justify-content: space-evenly;
-  list-style: none;
-}
-.mid > a {
+.you > a {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -33,7 +20,7 @@ nav {
   text-transform: uppercase;
   transition: 0.5s;
 }
-.mid > a::after {
+.you > a::after {
   position: absolute;
   content: "";
   top: 100%;
@@ -44,20 +31,13 @@ nav {
   transform: scaleX(0);
   transition: transform 0.8s;
 }
-.mid > a:hover {
+.you > a:hover {
   color: #d9e3e4;
 }
-.mid > a:hover::after {
+.you > a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
   transform-origin: bottom;
-}
-
-.right {
-  width: 10%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
 }
 .active {
   font-size: x-large;

@@ -3,22 +3,6 @@
     height: 90vh;
     background-image: radial-gradient(rgb(230, 221, 255), rgb(184, 184, 223));
   }
-
-  
-.container1 {
-    width: 100%;
-  }
-  
-  #rightContainer {
-    display: flex;
-    justify-content: flex-end;
-  }
-  
-  #rightContainer > img {
-    margin-right: 7vmax;
-    filter: drop-shadow(0 0 20px black);
-  }
-  
   #leftContainer {
     display: flex;
     flex-direction: column;
@@ -146,4 +130,25 @@
 .container1 .card .contentBx a:hover{
  background-color: #dc3545;
  color: white;
+}
+
+
+#rightContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#rightContainer > img {
+  margin-right: 7vmax;
+  filter: drop-shadow(0 0 20px black);
+}
+
+@media only screen and (max-width: 600px) {
+  .home{
+    height: 70vh;
+    background-color: #dc3545;
+  }
+  /* div.container45{
+    display: none;
+  } */
 }
