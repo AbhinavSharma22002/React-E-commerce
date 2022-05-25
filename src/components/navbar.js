@@ -15,10 +15,10 @@ const Navbar = () => {
     <>
     
       <nav className="navbar">
-        <div class="container-fluid">
-        <div className="container navbar-brand px-4">
+        <div className="container-fluid">
+        <div className="container">
           <div className="row gx-5">
-            <div className="col">
+            <div className="col navbar-brand" style={{'marginRight':'40px'}}>
           <Link to="/" style={{ cursor: "pointer", textDecoration: "none" }}>
             <h1 className="hy h3">E-Store</h1>
           </Link>
