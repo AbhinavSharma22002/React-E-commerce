@@ -26,7 +26,7 @@ const Login = (props) => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:5000/api/auth/login", {
+    const response = await fetch("https://afternoon-inlet-19554.herokuapp.com/api/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -46,7 +46,7 @@ const Login = (props) => {
   };
   const handleSubmit1 = async (e) => {
     e.preventDefault();
-    const response = await fetch("http://localhost:5000/api/auth/createUser", {
+    const response = await fetch("https://afternoon-inlet-19554.herokuapp.com/api/auth/createUser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

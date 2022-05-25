@@ -8,7 +8,7 @@ const [data, setdata] = useState([]);
 
 
   const calling =  async ()=>{
-    const response = await fetch("http://localhost:5000/api/notes/checkOrder", {
+    const response = await fetch("https://afternoon-inlet-19554.herokuapp.com/api/notes/checkOrder", {
         method: "Get",
         headers: {
           "Content-Type": "application/json",

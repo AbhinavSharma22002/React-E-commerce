@@ -40,7 +40,7 @@ function App() {
 
   useEffect(() => {
     async function value() {
-      const response = await fetch("http://localhost:5000/api/notes/Data", {
+      const response = await fetch("https://afternoon-inlet-19554.herokuapp.com/api/notes/Data", {
         method: "Get",
         headers: {
           "Content-Type": "application/json",

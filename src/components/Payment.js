@@ -97,7 +97,7 @@ const validateCardNo = (no)=> {
         })
       };
       await fetch(
-        'http://localhost:5000/api/auth/updateuser',
+        'https://afternoon-inlet-19554.herokuapp.com/api/auth/updateuser',
         requestOptions
       );
     }
