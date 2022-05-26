@@ -34,6 +34,9 @@ nav {
 .you > a:hover {
   color: #d9e3e4;
 }
+.ifless{
+  display: none;
+}
 .you > a:hover::after {
   transform: scaleX(1);
   transform-origin: left;
@@ -44,4 +47,17 @@ nav {
   background-color: #dc3545;
   color: white !important;
   border-radius: 10px;
+}
+.navbar-toggler{
+  display: none;
+}
+@media only screen and (max-width:771px) {
+  .navbar-toggler{
+    display: block;
+    border: 2px solid black;
+    float:right;
+  }
+  .wow{
+    display: none;
+  }
 }

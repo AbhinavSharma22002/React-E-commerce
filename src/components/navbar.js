@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect,useState } from "react";
 import { useLocation, useHistory, Link } from "react-router-dom";
 import "./navbar.css";
 const Navbar = () => {
@@ -8,9 +8,31 @@ const Navbar = () => {
     localStorage.removeItem("token");
     history.push("/login");
   };
-
+  const [click, setclick] = useState(false);
   useEffect(() => {}, [location]);
 
+  const clicked = ()=>{
+    if(click===false){
+    let val = document.getElementsByClassName("wow");
+    for(let i = 0;i<val.length;i++)
+    val[i].style["display"] = "block";
+
+    let text = document.getElementsByClassName("ifless");
+    for(let i =0;i<text.length;i++)
+    text[i].style["display"] = "block";
+    setclick(true);
+    }
+    else{
+      let val = document.getElementsByClassName("wow");
+      for(let i = 0;i<val.length;i++)
+      val[i].style["display"] = "none";
+  
+      let text = document.getElementsByClassName("ifless");
+      for(let i =0;i<text.length;i++)
+      text[i].style["display"] = "none";
+      setclick(false);
+    }
+  };
   return (
     <>
     
@@ -22,11 +44,9 @@ const Navbar = () => {
           <Link to="/" style={{ cursor: "pointer", textDecoration: "none" }}>
             <h1 className="hy h3">E-Store</h1>
           </Link>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-          </button>
             </div>
-            <div className="col you">
+            <div className="ifless"/>
+            <div className="col you wow">
           <Link
             className={`${location.pathname === "/" ? "active" : ""}`}
             to="/"
@@ -34,7 +54,8 @@ const Navbar = () => {
             Home
           </Link>
           </div>
-            <div className="col you">
+            <div className="ifless"/>
+          <div className="col you wow">
           <Link
             className={`${location.pathname === "/product" ? "active" : ""}`}
             to="/product"
@@ -42,7 +63,8 @@ const Navbar = () => {
             Products
           </Link>
           </div>
-            <div className="col you">
+            <div className="ifless"/>
+          <div className="col you wow">
           <Link
             className={`${location.pathname === "/About" ? "active" : ""}`}
             to="/About"
@@ -50,10 +72,11 @@ const Navbar = () => {
             About
           </Link>
           </div>
+            <div className="ifless"/>
 
           {localStorage.getItem("token") ? (
             <>
-            <div className="col you">
+            <div className="col you wow">
               <Link
                 className={`${location.pathname === "/cart" ? "active" : ""}`}
                 to="/cart"
@@ -61,9 +84,9 @@ const Navbar = () => {
                 Cart
               </Link>
               </div>
-              {" "}
+            <div className="ifless"/>
               {/*eslint-disable-next-line */}
-              <div className="col">
+              <div className="col you wow">
               <a>
                 <div className="dropdown">
                   {/*eslint-disable-next-line */}
@@ -103,7 +126,7 @@ const Navbar = () => {
               </div>
             </>
           ) : (
-            <div className = "col you">
+            <div className="col you wow">
 
             <Link
               className={`${location.pathname === "/login" ? "active" : ""}`}
@@ -113,10 +136,18 @@ const Navbar = () => {
             </Link>
             </div>
           )}
+          <div className="col" style={{'position':'absolute'}}>
+        <button onClick={clicked} className="navbar-toggler btn" type="button">
+        <span className="navbar-toggler-icon"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-list" viewBox="0 0 16 16">
+  <path fillRule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+</svg></span>
+        </button>
+        </div>
+
+
         </div>
         
         </div>
-        {/* <div className="right"></div> */}
         </div>
       </nav>
     </>
