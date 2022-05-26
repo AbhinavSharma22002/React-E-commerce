@@ -1,12 +1,13 @@
 import React from "react";
-
+import "./card..css";
 const Card = (props) => {
+  
   return (
     <div>
       <div className="card my-3">
         <h5 className="card-header">{props.item.category.toUpperCase()}</h5>
         <div className="card-body">
-          <h5 className="card-title"style={{fontSize:'4vmax'}}>{props.item.name}</h5>
+          <h5 className="card-title h2">{props.item.name}</h5>
           <p className="card-text">
             <span>
             <img src={`./images/${props.item.image}`} alt="your item"/>
