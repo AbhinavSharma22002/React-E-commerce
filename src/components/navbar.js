@@ -22,6 +22,9 @@ const Navbar = () => {
           <Link to="/" style={{ cursor: "pointer", textDecoration: "none" }}>
             <h1 className="hy h3">E-Store</h1>
           </Link>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
             </div>
             <div className="col you">
           <Link

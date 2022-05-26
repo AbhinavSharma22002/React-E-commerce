@@ -2,7 +2,13 @@ import React from 'react'
 import { Link } from 'react-router-dom';
 import './product.css';
 const Product = () => {
-   
+    function generateRandom(min = 0, max = 40) {
+      let difference = max - min;
+      let rand = Math.random(); 
+      rand = Math.floor( rand * difference);
+      rand = rand + min;
+      return rand;
+  }
     return (
         <div>
             
@@ -30,7 +36,7 @@ const Product = () => {
         <div className="container1 px-3 py-3">
             <div className="card">
             <div className="imgBx">
-                <img src="./images/img5.jfif" alt="" height="350px" width="90%"/>
+                <img src={`./images/img${generateRandom(1,10)}.jfif`} alt="" height="350px" width="90%"/>
             </div>
             <div className="contentBx">
                 <h2>Fashions</h2>
@@ -45,7 +51,7 @@ const Product = () => {
         <div className="container1 px-3 py-3">
             <div className="card">
             <div className="imgBx">
-                <img src="./images/img15.jfif" alt="" height="350px" width="90%"/>
+                <img src={`./images/img${generateRandom(11,20)}.jfif`} alt="" height="350px" width="90%"/>
             </div>
             <div className="contentBx">
                 <h2>Shirts</h2>
@@ -61,7 +67,7 @@ const Product = () => {
         <div className="container1 px-3 py-3">
             <div className="card">
             <div className="imgBx">
-            <img src="./images/img25.jfif" height="350px" width="90%" alt="Ist product" />
+            <img src={`./images/img${generateRandom(21,30)}.jfif`} height="350px" width="90%" alt="Ist product" />
             </div>
             <div className="contentBx">
                 <h2>Jeans</h2>
@@ -75,7 +81,7 @@ const Product = () => {
         <div className="container1 px-3 py-3">
             <div className="card">
             <div className="imgBx">
-            <img src="./images/img35.jfif" height="350px" width="90%" alt="Ist product" />
+            <img src={`./images/img${generateRandom(31,40)}.jfif`} height="350px" width="90%" alt="Ist product" />
             </div>
             <div className="contentBx">
                 <h2>Watches</h2>

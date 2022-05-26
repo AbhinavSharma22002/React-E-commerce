@@ -66,7 +66,7 @@ const Login = (props) => {
   };
   return (
     <>
-      <div className="d-md-flex half">
+      <div className="d-md-flex half mx-5">
         <div className="bg hello"></div>
         <div className="contents">
           <div className="container">
