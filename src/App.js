@@ -21,9 +21,6 @@ import Shoes from './components/Shoes';
 import Product from './components/Product';
 import Payment from './components/Payment';
 import Order from './components/Order';
-import Bakery from './components/Bakery';
-import Grocery from './components/Grocery';
-import Matrics from './components/Matrics';
 
 
 function App() { 
@@ -97,15 +94,6 @@ function App() {
       </Route>      
       <Route exact path="/jeans">
       {data===null?"":<Jeans showAlert={showAlert} data={data} />  /*for jeans*/}
-      </Route>
-      <Route exact path="/matics">
-        {data===null?"":<Matrics showAlert={showAlert} data={data}/>/*for cosmatic */}
-      </Route>
-      <Route exact path="/grocery">
-        {data===null?"":<Grocery showAlert={showAlert} data={data}/>/*for grocery*/}
-      </Route>
-      <Route exact path="/bakery">
-        {data===null?"":<Bakery showAlert={showAlert} data={data}/>/*for bakery*/}
       </Route>
       <Route exact path="/About">
     <About/>

@@ -154,6 +154,9 @@
   .card{
     width: 25rem;
   }
+  #leftContainer >a> button{
+    width: 100%;
+  }
 }
 
 @media only screen and (max-width: 500px) and (min-width: 300px) {
@@ -167,5 +170,8 @@
   }
   .card{
     width: 30rem;
+  }
+  #leftContainer >a> button{
+    width: 100%;
   }
 }
