@@ -6,6 +6,7 @@ const Navbar = () => {
   let history = useHistory();
   const handleLogout = () => {
     localStorage.removeItem("token");
+    clicked();
     history.push("/login");
   };
   const [click, setclick] = useState(false);
@@ -14,12 +15,18 @@ const Navbar = () => {
   const clicked = ()=>{
     if(click===false){
     let val = document.getElementsByClassName("wow");
-    for(let i = 0;i<val.length;i++)
+    for(let i = 0;i<val.length;i++){
     val[i].style["display"] = "block";
+    val[i].style["z-index"] = "1000";
+    }
 
     let text = document.getElementsByClassName("ifless");
-    for(let i =0;i<text.length;i++)
+    for(let i =0;i<text.length;i++){
     text[i].style["display"] = "block";
+    }
+
+    let navBox = document.getElementsByClassName("navbar");
+    navBox[0].style["padding-bottom"] = "20vh";
     setclick(true);
     }
     else{
@@ -30,6 +37,8 @@ const Navbar = () => {
       let text = document.getElementsByClassName("ifless");
       for(let i =0;i<text.length;i++)
       text[i].style["display"] = "none";
+      let navBox = document.getElementsByClassName("navbar");
+      navBox[0].style["padding-bottom"] = "0vh";
       setclick(false);
     }
   };
@@ -41,7 +50,7 @@ const Navbar = () => {
         <div className="container">
           <div className="row gx-5">
             <div className="col navbar-brand" style={{'marginRight':'40px'}}>
-          <Link to="/" style={{ cursor: "pointer", textDecoration: "none" }}>
+          <Link to="/" style={{ cursor: "pointer", textDecoration: "none" }} onClick={clicked}>
             <h1 className="hy h3">E-Store</h1>
           </Link>
             </div>
@@ -50,6 +59,7 @@ const Navbar = () => {
           <Link
             className={`${location.pathname === "/" ? "active" : ""}`}
             to="/"
+            onClick={clicked}
           >
             Home
           </Link>
@@ -59,6 +69,7 @@ const Navbar = () => {
           <Link
             className={`${location.pathname === "/product" ? "active" : ""}`}
             to="/product"
+            onClick={clicked}
           >
             Products
           </Link>
@@ -68,6 +79,7 @@ const Navbar = () => {
           <Link
             className={`${location.pathname === "/About" ? "active" : ""}`}
             to="/About"
+            onClick={clicked}
           >
             About
           </Link>
@@ -80,6 +92,7 @@ const Navbar = () => {
               <Link
                 className={`${location.pathname === "/cart" ? "active" : ""}`}
                 to="/cart"
+                onClick={clicked}
               >
                 Cart
               </Link>
@@ -116,7 +129,7 @@ const Navbar = () => {
                       </a>
                     </li>
                     <li>
-                      <Link to="/Order" className="dropdown-item">
+                      <Link to="/Order" onClick={clicked} className="dropdown-item">
                         My Orders
                       </Link>
                     </li>
@@ -130,7 +143,7 @@ const Navbar = () => {
 
             <Link
               className={`${location.pathname === "/login" ? "active" : ""}`}
-              to="/login"
+              to="/login" onClick={clicked}
             >
               Login
             </Link>
