@@ -13,6 +13,7 @@ const Navbar = () => {
   useEffect(() => {}, [location]);
 
   const clicked = ()=>{
+    if(window.innerWidth<=771){
     if(click===false){
     let val = document.getElementsByClassName("wow");
     for(let i = 0;i<val.length;i++){
@@ -41,6 +42,7 @@ const Navbar = () => {
       navBox[0].style["padding-bottom"] = "0vh";
       setclick(false);
     }
+  }
   };
   return (
     <>
