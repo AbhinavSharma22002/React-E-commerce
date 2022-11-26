@@ -8,7 +8,7 @@ const Card3 = (props) => {
         // eslint-disable-next-line
     }, []);
     const calling= async()=>{
-        const response = await fetch("https://afternoon-inlet-19554.herokuapp.com/api/notes/Data1/".concat(props.order.id), {
+        const response = await fetch("https://139.59.27.238/api/notes/Data1/".concat(props.order.id), {
             method: "Get",
             headers: {
               "Content-Type": "application/json",

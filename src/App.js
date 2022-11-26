@@ -37,7 +37,7 @@ function App() {
 
   useEffect(() => {
     async function value() {
-      const response = await fetch("https://afternoon-inlet-19554.herokuapp.com/api/notes/Data", {
+      const response = await fetch("http://139.59.27.238/api/notes/Data", {
         method: "Get",
         headers: {
           "Content-Type": "application/json",

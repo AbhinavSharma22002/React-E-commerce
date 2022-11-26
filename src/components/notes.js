@@ -72,7 +72,7 @@ const Notes = (props) => {
         })
       };
       await fetch(
-        'https://afternoon-inlet-19554.herokuapp.com/api/notes/addorder',
+        'https://139.59.27.238/api/notes/addorder',
         requestOptions
       );
       

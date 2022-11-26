@@ -10,7 +10,7 @@ const NoteState = (props) => {
       },
     };
     const response = await fetch(
-      "https://afternoon-inlet-19554.herokuapp.com/api/notes/fetchallNotes",
+      "https://139.59.27.238/api/notes/fetchallNotes",
       requestOptions
     );
     const data = await response.json();
@@ -47,7 +47,7 @@ const NoteState = (props) => {
       }),
     };
     const response = await fetch(
-      "https://afternoon-inlet-19554.herokuapp.com/api/notes/addNote",
+      "https://139.59.27.238/api/notes/addNote",
       requestOptions
     );
     const data = await response.json();
@@ -77,7 +77,7 @@ const NoteState = (props) => {
         }),
       };
        const response = await fetch(
-        `https://afternoon-inlet-19554.herokuapp.com/api/notes/updatenotes/${text._id}`,
+        `https://139.59.27.238/api/notes/updatenotes/${text._id}`,
         requestOptions
       );
       await response.json();
@@ -110,7 +110,7 @@ const NoteState = (props) => {
       }),
     };
      await fetch(
-      `https://afternoon-inlet-19554.herokuapp.com/api/notes/updatenotes/${item._id}`,
+      `https://139.59.27.238/api/notes/updatenotes/${item._id}`,
       requestOptions
     );
   };
@@ -125,7 +125,7 @@ const NoteState = (props) => {
       },
     };
     const response = await fetch(
-      "https://afternoon-inlet-19554.herokuapp.com/api/notes/deleteNote/".concat(b),
+      "https://139.59.27.238/api/notes/deleteNote/".concat(b),
       requestOptions
     );
     // eslint-disable-next-line
