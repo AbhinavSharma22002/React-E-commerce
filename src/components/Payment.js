@@ -97,7 +97,7 @@ const validateCardNo = (no)=> {
         })
       };
       await fetch(
-        'https://139.59.27.238/api/auth/updateuser',
+        'https://abhinav-cloud-odlx6.ondigitalocean.app/api/auth/updateuser',
         requestOptions
       );
     }

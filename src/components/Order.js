@@ -8,7 +8,7 @@ const [data, setdata] = useState([]);
 
 
   const calling =  async ()=>{
-    const response = await fetch("https://139.59.27.238/api/notes/checkOrder", {
+    const response = await fetch("https://abhinav-cloud-odlx6.ondigitalocean.app/api/notes/checkOrder", {
         method: "Get",
         headers: {
           "Content-Type": "application/json",

@@ -72,7 +72,7 @@ const Notes = (props) => {
         })
       };
       await fetch(
-        'https://139.59.27.238/api/notes/addorder',
+        'https://abhinav-cloud-odlx6.ondigitalocean.app/api/notes/addorder',
         requestOptions
       );
       

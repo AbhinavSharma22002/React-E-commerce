@@ -26,7 +26,7 @@ const Login = (props) => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const response = await fetch("https://139.59.27.238/api/auth/login", {
+    const response = await fetch("https://abhinav-cloud-odlx6.ondigitalocean.app/api/auth/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -46,7 +46,7 @@ const Login = (props) => {
   };
   const handleSubmit1 = async (e) => {
     e.preventDefault();
-    const response = await fetch("https://139.59.27.238/api/auth/createUser", {
+    const response = await fetch("https://abhinav-cloud-odlx6.ondigitalocean.app/api/auth/createUser", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
